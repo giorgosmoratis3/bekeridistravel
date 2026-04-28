@@ -1,7 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CountUp } from "@/components/count-up";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
