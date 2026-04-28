@@ -188,7 +188,7 @@ function HomePage() {
                 μοναδικούς προορισμούς. Οργανωμένες εκδρομές, πολυήμερα ταξίδια
                 και ενοικιάσεις λεωφορείων με εμπειρία και συνέπεια.
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-5 animate-[fade-in-up_1s_cubic-bezier(0.22,1,0.36,1)_0.7s_both]">
+              <div className="mt-8 flex flex-wrap items-center gap-4 sm:gap-5 animate-[fade-in-up_1s_cubic-bezier(0.22,1,0.36,1)_0.7s_both]">
                 <Link
                   to="/services"
                   className="group inline-flex items-center gap-2 px-7 py-3.5 bg-white text-ink font-display text-xs tracking-[0.25em] hover:bg-brand hover:text-brand-foreground transition-all duration-300 hover:scale-105 rounded-full"
@@ -200,6 +200,14 @@ function HomePage() {
                     className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   />
                 </Link>
+                {/* Mobile-only call button (replaces header icon on small screens) */}
+                <a
+                  href={`tel:${PHONE_TEL}`}
+                  className="sm:hidden group inline-flex items-center gap-2 px-6 py-3.5 bg-brand text-brand-foreground font-display text-xs tracking-[0.25em] rounded-full shadow-lg hover:scale-105 transition-all"
+                >
+                  <Phone size={14} strokeWidth={2.2} />
+                  ΚΑΛΕΣΤΕ ΜΑΣ
+                </a>
                 <Link
                   to="/contact"
                   className="story-link font-display text-xs tracking-[0.25em] text-white/90 hover:text-brand transition-colors"
