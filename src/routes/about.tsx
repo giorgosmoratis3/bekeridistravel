@@ -93,6 +93,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const [openFleet, setOpenFleet] = useState<null | (typeof FLEET_PREVIEW)[number]>(null);
   return (
     <PageShell>
       <section
