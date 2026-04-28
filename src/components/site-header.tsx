@@ -31,10 +31,15 @@ export function SiteHeader() {
     setOpen(false);
   }, [location.pathname]);
 
+  // On mobile/tablet, when the menu is open we force a solid white background.
+  // `open` can only become true via the burger button, which is hidden on md+ (md:hidden),
+  // so this never affects desktop.
+  const solid = scrolled || open;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        solid
           ? "bg-white/95 backdrop-blur-md"
           : "bg-transparent"
       }`}
@@ -51,14 +56,14 @@ export function SiteHeader() {
             <div className="leading-none">
               <div
                 className={`font-display font-bold text-sm md:text-base lg:text-lg tracking-widest transition-colors duration-500 ${
-                  scrolled ? "text-ink" : "text-white"
+                  solid ? "text-ink" : "text-white"
                 }`}
               >
                 BEKERIDIS
               </div>
               <div
                 className={`font-display text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] transition-colors duration-500 ${
-                  scrolled ? "text-muted-foreground" : "text-white/80"
+                  solid ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
                 TRAVEL
@@ -109,7 +114,7 @@ export function SiteHeader() {
             <button
               onClick={() => setOpen((v) => !v)}
               className={`md:hidden p-2 -mr-1 transition-colors duration-500 ${
-                scrolled ? "text-ink" : "text-white"
+                solid ? "text-ink" : "text-white"
               }`}
               aria-label="Menu"
             >
