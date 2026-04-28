@@ -107,7 +107,7 @@ export function SiteHeader() {
             </a>
             <a
               href={`tel:${PHONE}`}
-              className="sm:hidden p-2 text-brand"
+              className="hidden sm:hidden p-2 text-brand"
               aria-label="Καλέστε μας"
             >
               <Phone size={20} />
