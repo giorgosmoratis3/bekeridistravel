@@ -39,24 +39,25 @@ export function SiteHeader() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-2.5 group ml-2 sm:ml-4 md:ml-6 lg:ml-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4 lg:gap-8 h-16 md:h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2.5 group shrink-0">
             <img
               src={logo}
               alt="Bekeridis Travel"
-              className="h-9 md:h-11 w-auto transition-transform group-hover:scale-110"
+              className="h-9 md:h-10 lg:h-11 w-auto transition-transform group-hover:scale-110"
             />
             <div className="leading-none">
               <div
-                className={`font-display font-bold text-sm sm:text-base md:text-lg tracking-widest transition-colors duration-500 ${
+                className={`font-display font-bold text-sm md:text-base lg:text-lg tracking-widest transition-colors duration-500 ${
                   scrolled ? "text-ink" : "text-white"
                 }`}
               >
                 BEKERIDIS
               </div>
               <div
-                className={`font-display text-[8px] sm:text-[9px] md:text-[10px] tracking-[0.3em] transition-colors duration-500 ${
+                className={`font-display text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] transition-colors duration-500 ${
                   scrolled ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
@@ -65,7 +66,8 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 md:ml-16 lg:ml-24 xl:ml-32">
+          {/* Nav (centered, takes remaining space) */}
+          <nav className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-6 xl:gap-8 min-w-0">
             {NAV.map((item) => {
               const currentHash = location.hash.replace("#", "") || undefined;
               const active =
@@ -75,7 +77,7 @@ export function SiteHeader() {
                   key={`${item.to}#${item.hash ?? ""}`}
                   to={item.to}
                   hash={item.hash}
-                  className={`hover-bar font-display text-[12px] lg:text-sm tracking-[0.14em] lg:tracking-[0.18em] transition-colors duration-500 pb-1 whitespace-nowrap ${
+                  className={`hover-bar font-display text-[11px] lg:text-[13px] tracking-[0.12em] lg:tracking-[0.18em] transition-colors duration-500 pb-1 whitespace-nowrap ${
                     active
                       ? "text-brand"
                       : scrolled
@@ -89,10 +91,11 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="flex items-center gap-2 md:ml-6 lg:ml-10 xl:ml-14">
+          {/* Right actions */}
+          <div className="flex items-center gap-2 shrink-0">
             <a
               href={`tel:${PHONE}`}
-              className={`hidden sm:inline-flex items-center gap-2 px-4 lg:px-5 py-2 font-display text-xs lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
+              className={`hidden sm:inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
                 scrolled
                   ? "bg-brand text-brand-foreground hover:bg-brand/90"
                   : "bg-white text-ink hover:bg-brand hover:text-brand-foreground"
@@ -112,7 +115,7 @@ export function SiteHeader() {
 
             <button
               onClick={() => setOpen((v) => !v)}
-              className={`md:hidden p-2 -mr-2 transition-colors duration-500 ${
+              className={`md:hidden p-2 -mr-1 transition-colors duration-500 ${
                 scrolled ? "text-ink" : "text-white"
               }`}
               aria-label="Menu"
