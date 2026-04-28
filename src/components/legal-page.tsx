@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { PageShell } from "@/components/page-shell";
+import legalBanner from "@/assets/legal-banner.jpg";
 
 type Section = {
   heading: string;
@@ -19,13 +20,27 @@ export function LegalPage({
 }) {
   return (
     <PageShell>
-      {/* Hero */}
-      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 px-5 sm:px-6 bg-ink text-white overflow-hidden">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-display text-xs tracking-[0.4em] text-brand mb-4 animate-[fade-in-up_0.7s_ease-out_both]">
+      {/* Hero with background image + blend overlays (same pattern as Services) */}
+      <section className="relative min-h-[40vh] md:min-h-[50vh] flex items-center justify-center overflow-hidden">
+        <img
+          src={legalBanner}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1088}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/35" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-background/60 to-background" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/40 to-transparent" />
+        <div className="relative z-10 w-full text-center px-5 sm:px-6 pt-10">
+          <p className="font-display text-xs tracking-[0.4em] text-white/85 mb-4 animate-[fade-in-up_0.7s_ease-out_both]">
             {eyebrow}
           </p>
-          <h1 className="font-display text-4xl md:text-6xl font-bold tracking-wide animate-[fade-in-up_0.9s_cubic-bezier(0.22,1,0.36,1)_0.15s_both]">
+          <h1 className="font-display text-4xl md:text-6xl font-bold text-white tracking-wide animate-[fade-in-up_0.9s_cubic-bezier(0.22,1,0.36,1)_0.15s_both]">
             {title}
             <span className="text-brand">.</span>
           </h1>
