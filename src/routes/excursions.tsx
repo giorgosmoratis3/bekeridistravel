@@ -124,8 +124,41 @@ function ExcursionsPage() {
         </div>
       </section>
 
-      {/* Alternating excursion blocks — ίδιο pattern με τις Υπηρεσίες */}
-      <section className="py-28 px-6">
+      {/* MOBILE — τετράγωνες κάρτες σε grid 2 στηλών */}
+      <section className="md:hidden py-12 px-4">
+        <div className="mx-auto max-w-xl grid grid-cols-2 gap-3">
+          {EXCURSIONS.map((e) => (
+            <a
+              key={e.name}
+              href={`tel:${PHONE_TEL}`}
+              className="group relative aspect-square overflow-hidden rounded-xl shadow-md active:scale-[0.98] transition-transform"
+            >
+              <img
+                src={e.img}
+                alt={e.name}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-3 text-left">
+                <div className="font-display font-bold text-white text-sm leading-tight">
+                  {e.name}
+                </div>
+                <div className="mt-1 font-display text-[9px] tracking-[0.2em] text-white/80">
+                  {e.tag.toUpperCase()}
+                </div>
+                <div className="mt-2 flex items-center gap-2 text-[10px] text-white/80">
+                  <Clock size={10} strokeWidth={2} />
+                  {e.duration}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP — Alternating excursion blocks (αμετάβλητο) */}
+      <section className="hidden md:block py-28 px-6">
         <div className="mx-auto max-w-6xl space-y-28">
           {EXCURSIONS.map((e, i) => (
             <article
