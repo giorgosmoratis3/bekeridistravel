@@ -105,13 +105,6 @@ export function SiteHeader() {
               <span className="hidden lg:inline">ΚΑΛΕΣΤΕ ΜΑΣ</span>
               <span className="lg:hidden">{PHONE_DISPLAY}</span>
             </a>
-            <a
-              href={`tel:${PHONE}`}
-              className="hidden sm:hidden p-2 text-brand"
-              aria-label="Καλέστε μας"
-            >
-              <Phone size={20} />
-            </a>
 
             <button
               onClick={() => setOpen((v) => !v)}
