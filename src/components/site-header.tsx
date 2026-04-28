@@ -31,10 +31,15 @@ export function SiteHeader() {
     setOpen(false);
   }, [location.pathname]);
 
+  // On mobile/tablet, when the menu is open we force a solid white background.
+  // `open` can only become true via the burger button, which is hidden on md+ (md:hidden),
+  // so this never affects desktop.
+  const solid = scrolled || open;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        solid
           ? "bg-white/95 backdrop-blur-md"
           : "bg-transparent"
       }`}
