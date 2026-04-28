@@ -65,7 +65,7 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 md:ml-8 lg:ml-12 xl:ml-16">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 md:ml-16 lg:ml-24 xl:ml-32">
             {NAV.map((item) => {
               const currentHash = location.hash.replace("#", "") || undefined;
               const active =
