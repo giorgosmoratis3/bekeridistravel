@@ -31,17 +31,19 @@ export function SiteHeader() {
     setOpen(false);
   }, [location.pathname]);
 
-  // On mobile/tablet, when the menu is open we force a solid white background.
-  // `open` can only become true via the burger button, which is hidden on md+ (md:hidden),
-  // so this never affects desktop.
+  // `open` can only become true via the burger button (md:hidden), so it only affects mobile/tablet.
+  // When the menu is open we use a Liquid Glass effect (semi-transparent dark/grey + heavy blur).
+  // When scrolled (any breakpoint), we use the solid white background.
   const solid = scrolled || open;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        solid
-          ? "bg-white/95 backdrop-blur-md"
-          : "bg-transparent"
+        open
+          ? "bg-ink/40 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/10"
+          : scrolled
+            ? "bg-white/95 backdrop-blur-md"
+            : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -56,14 +58,14 @@ export function SiteHeader() {
             <div className="leading-none">
               <div
                 className={`font-display font-bold text-sm md:text-base lg:text-lg tracking-widest transition-colors duration-500 ${
-                  solid ? "text-ink" : "text-white"
+                  scrolled && !open ? "text-ink" : "text-white"
                 }`}
               >
                 BEKERIDIS
               </div>
               <div
                 className={`font-display text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] transition-colors duration-500 ${
-                  solid ? "text-muted-foreground" : "text-white/80"
+                  scrolled && !open ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
                 TRAVEL
@@ -114,7 +116,7 @@ export function SiteHeader() {
             <button
               onClick={() => setOpen((v) => !v)}
               className={`md:hidden p-2 -mr-1 transition-colors duration-500 ${
-                solid ? "text-ink" : "text-white"
+                scrolled && !open ? "text-ink" : "text-white"
               }`}
               aria-label="Menu"
             >
@@ -125,7 +127,7 @@ export function SiteHeader() {
 
         {open && (
           <div className="md:hidden pb-5 animate-in fade-in slide-in-from-top-2 duration-300">
-            <nav className="flex flex-col gap-1 pt-3 border-t border-border">
+            <nav className="flex flex-col gap-1 pt-3 border-t border-white/15">
               {NAV.map((item) => {
                 const currentHash = location.hash.replace("#", "") || undefined;
                 const active =
@@ -135,8 +137,8 @@ export function SiteHeader() {
                     key={`${item.to}#${item.hash ?? ""}`}
                     to={item.to}
                     hash={item.hash}
-                    className={`font-display text-sm tracking-[0.18em] py-3 px-1 border-b border-border/40 ${
-                      active ? "text-brand" : "text-ink"
+                    className={`font-display text-sm tracking-[0.18em] py-3 px-1 border-b border-white/10 ${
+                      active ? "text-brand" : "text-white/90 hover:text-brand"
                     }`}
                   >
                     {item.label}
