@@ -127,7 +127,7 @@ export function SiteHeader() {
 
         {open && (
           <div className="md:hidden pb-5 animate-in fade-in slide-in-from-top-2 duration-300">
-            <nav className="flex flex-col gap-1 pt-3 border-t border-border">
+            <nav className="flex flex-col gap-1 pt-3 border-t border-white/15">
               {NAV.map((item) => {
                 const currentHash = location.hash.replace("#", "") || undefined;
                 const active =
@@ -137,8 +137,8 @@ export function SiteHeader() {
                     key={`${item.to}#${item.hash ?? ""}`}
                     to={item.to}
                     hash={item.hash}
-                    className={`font-display text-sm tracking-[0.18em] py-3 px-1 border-b border-border/40 ${
-                      active ? "text-brand" : "text-ink"
+                    className={`font-display text-sm tracking-[0.18em] py-3 px-1 border-b border-white/10 ${
+                      active ? "text-brand" : "text-white/90 hover:text-brand"
                     }`}
                   >
                     {item.label}
