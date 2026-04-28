@@ -58,14 +58,14 @@ export function SiteHeader() {
             <div className="leading-none">
               <div
                 className={`font-display font-bold text-sm md:text-base lg:text-lg tracking-widest transition-colors duration-500 ${
-                  solid ? "text-ink" : "text-white"
+                  scrolled && !open ? "text-ink" : "text-white"
                 }`}
               >
                 BEKERIDIS
               </div>
               <div
                 className={`font-display text-[8px] md:text-[9px] lg:text-[10px] tracking-[0.3em] transition-colors duration-500 ${
-                  solid ? "text-muted-foreground" : "text-white/80"
+                  scrolled && !open ? "text-muted-foreground" : "text-white/80"
                 }`}
               >
                 TRAVEL
@@ -116,7 +116,7 @@ export function SiteHeader() {
             <button
               onClick={() => setOpen((v) => !v)}
               className={`md:hidden p-2 -mr-1 transition-colors duration-500 ${
-                solid ? "text-ink" : "text-white"
+                scrolled && !open ? "text-ink" : "text-white"
               }`}
               aria-label="Menu"
             >
