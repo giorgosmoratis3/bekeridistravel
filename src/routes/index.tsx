@@ -429,7 +429,7 @@ function HomePage() {
                     <p className="mt-2 md:mt-3 text-ink/70 leading-relaxed text-sm md:text-base">
                       {s.desc}
                     </p>
-                    <div className="mt-4 h-[2px] w-0 bg-brand transition-all duration-700 ease-out group-hover:w-full" />
+                    <div className="mt-4 h-[2px] w-12 bg-brand transition-all duration-500 group-hover:w-full" />
                   </div>
                 </Link>
               );
