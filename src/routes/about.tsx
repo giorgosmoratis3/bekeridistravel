@@ -338,6 +338,9 @@ function AboutPage() {
                       </span>
                     </div>
                   </div>
+                  <div className="font-display text-base font-semibold text-ink mb-3 leading-tight">
+                    {f.model}
+                  </div>
                   <div className="h-px w-full bg-ink/10 mb-5" />
                   <p className="text-base text-ink/75 leading-relaxed mb-6">
                     {f.desc}
