@@ -7,11 +7,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
-import fleetNeoplan from "@/assets/fleet-neoplan-cityliner.jpg";
-import fleetTourino from "@/assets/fleet-mercedes-tourino.jpg";
-import fleetSetra from "@/assets/fleet-setra-315hd.jpg";
-import fleetIveco from "@/assets/fleet-iveco-rapido.jpg";
-import fleetAuwarter from "@/assets/fleet-mercedes-auwarter.jpg";
+import fleet26 from "@/assets/fleet-bus-26.jpg";
+import fleet35 from "@/assets/fleet-bus-35.jpg";
+import fleet52 from "@/assets/fleet-bus-52.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
 import destMeteora from "@/assets/destination-meteora.jpg";
 
@@ -26,7 +24,7 @@ const TIMELINE = [
     year: "2008",
     title: "Ανανέωση στόλου",
     desc: "Επένδυση σε σύγχρονα και ασφαλή λεωφορεία για άνετες μετακινήσεις.",
-    img: fleetNeoplan,
+    img: fleet52,
   },
   {
     year: "2013",
@@ -43,52 +41,35 @@ const TIMELINE = [
   {
     year: "2021",
     title: "Ενίσχυση στόλου",
-    desc: "Νέα οχήματα μικρής και μεσαίας χωρητικότητας για ευελιξία σε κάθε τύπο εκδρομής.",
-    img: fleetTourino,
+    desc: "Νέα οχήματα 26 και 35 θέσεων για ευελιξία σε κάθε τύπο εκδρομής.",
+    img: fleet35,
   },
   {
     year: "Σήμερα",
     title: "Συνεχίζουμε δυνατά",
     desc: "Με χιλιάδες ευχαριστημένους ταξιδιώτες, σχεδιάζουμε το επόμενο ταξίδι σας.",
-    img: fleetAuwarter,
+    img: fleet26,
   },
 ];
 
 const FLEET_PREVIEW = [
   {
-    img: fleetNeoplan,
+    img: fleet52,
     type: "BUS",
-    model: "Neoplan Cityliner 2010",
     seats: "52",
     desc: "Πούλμαν μεγάλης χωρητικότητας για σχολεία, συλλόγους και μεγάλα γκρουπ.",
   },
   {
-    img: fleetSetra,
+    img: fleet35,
     type: "BUS",
-    model: "Setra S 315 HD",
-    seats: "50",
-    desc: "Premium γερμανικό πούλμαν για πολυήμερα ταξίδια και άνετες μετακινήσεις.",
-  },
-  {
-    img: fleetTourino,
-    type: "BUS",
-    model: "Mercedes Tourino 2010",
     seats: "35",
     desc: "Ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
   },
   {
-    img: fleetIveco,
-    type: "MIDI BUS",
-    model: "Iveco Rapido 2015",
-    seats: "30",
-    desc: "Σύγχρονο midi πούλμαν για μεσαία γκρουπ και ορεινούς προορισμούς.",
-  },
-  {
-    img: fleetAuwarter,
+    img: fleet26,
     type: "MINI BUS",
-    model: "Mercedes Auwärter 818",
-    seats: "19",
-    desc: "Μικρό λεωφορείο για VIP μετακινήσεις και μικρές παρέες.",
+    seats: "26",
+    desc: "Μίνι λεωφορείο για μικρότερα γκρουπ και ορεινούς προορισμούς.",
   },
 ];
 
@@ -338,9 +319,6 @@ function AboutPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="font-display text-base font-semibold text-ink mb-3 leading-tight">
-                    {f.model}
-                  </div>
                   <div className="h-px w-full bg-ink/10 mb-5" />
                   <p className="text-base text-ink/75 leading-relaxed mb-6">
                     {f.desc}
@@ -385,7 +363,7 @@ function AboutPage() {
                     </div>
                   </div>
                   <DialogTitle className="font-display text-2xl md:text-3xl font-bold text-ink text-left">
-                    {openFleet.model}
+                    {openFleet.type} {openFleet.seats} θέσεων
                   </DialogTitle>
                   <DialogDescription className="text-base text-ink/75 leading-relaxed text-left pt-2">
                     {openFleet.desc}
