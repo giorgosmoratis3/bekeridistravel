@@ -23,9 +23,11 @@ import servicesBanner from "@/assets/services-banner.jpg";
 import serviceBus from "@/assets/service-bus.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import fleetBus52 from "@/assets/fleet-bus-52.jpg";
-import fleetBus35 from "@/assets/fleet-bus-35.jpg";
-import fleetBus26 from "@/assets/fleet-bus-26.jpg";
+import fleetNeoplan from "@/assets/fleet-neoplan-cityliner.jpg";
+import fleetTourino from "@/assets/fleet-mercedes-tourino.jpg";
+import fleetSetra from "@/assets/fleet-setra-315hd.jpg";
+import fleetIveco from "@/assets/fleet-iveco-rapido.jpg";
+import fleetAuwarter from "@/assets/fleet-mercedes-auwarter.jpg";
 
 const PHONE_TEL = "+306977651811";
 const PHONE_LABEL = "6977 651 811";
