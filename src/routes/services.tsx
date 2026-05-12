@@ -23,9 +23,11 @@ import servicesBanner from "@/assets/services-banner.jpg";
 import serviceBus from "@/assets/service-bus.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import fleetBus52 from "@/assets/fleet-bus-52.jpg";
-import fleetBus35 from "@/assets/fleet-bus-35.jpg";
-import fleetBus26 from "@/assets/fleet-bus-26.jpg";
+import fleetNeoplan from "@/assets/fleet-neoplan-cityliner.jpg";
+import fleetTourino from "@/assets/fleet-mercedes-tourino.jpg";
+import fleetSetra from "@/assets/fleet-setra-315hd.jpg";
+import fleetIveco from "@/assets/fleet-iveco-rapido.jpg";
+import fleetAuwarter from "@/assets/fleet-mercedes-auwarter.jpg";
 
 const PHONE_TEL = "+306977651811";
 const PHONE_LABEL = "6977 651 811";
@@ -70,6 +72,7 @@ const SERVICES = [
 type FleetItem = {
   img: string;
   type: string;
+  model: string;
   seats: string;
   desc: string;
   features: { icon: typeof Users; label: string }[];
@@ -80,10 +83,11 @@ type FleetItem = {
 
 const FLEET: FleetItem[] = [
   {
-    img: fleetBus52,
+    img: fleetNeoplan,
     type: "BUS",
+    model: "Neoplan Cityliner 2010",
     seats: "52",
-    desc: "Λεωφορείο μεγάλης χωρητικότητας — ιδανικό για σχολικές εκδρομές, συλλόγους και μεγάλα γκρουπ.",
+    desc: "Πούλμαν μεγάλης χωρητικότητας — ιδανικό για σχολικές εκδρομές, συλλόγους και μεγάλα γκρουπ.",
     features: [
       { icon: Users, label: "52 θέσεις" },
       { icon: Snowflake, label: "Κλιματισμός" },
@@ -92,7 +96,7 @@ const FLEET: FleetItem[] = [
       { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
     ],
     details:
-      "Πολυτελές πούλμαν 52 θέσεων με ευρύχωρες, ανακλινόμενες θέσεις, διπλό κλιματισμό και πανοραμικά τζάμια. Ιδανικό για μεγάλα γκρουπ που ταξιδεύουν με άνεση σε μακρινούς προορισμούς.",
+      "Πολυτελές πούλμαν Neoplan Cityliner 52 θέσεων με ευρύχωρες, ανακλινόμενες θέσεις, διπλό κλιματισμό και πανοραμικά τζάμια. Ιδανικό για μεγάλα γκρουπ που ταξιδεύουν με άνεση σε μακρινούς προορισμούς.",
     ideal: [
       "Σχολικές εκδρομές",
       "Πολυήμερα ταξίδια",
@@ -102,15 +106,44 @@ const FLEET: FleetItem[] = [
     specs: [
       { icon: Users, label: "Θέσεις", value: "52" },
       { icon: Briefcase, label: "Αποσκευές", value: "Μεγάλος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Premium Coach" },
+      { icon: Gauge, label: "Μοντέλο", value: "Neoplan Cityliner 2010" },
       { icon: Music2, label: "Ψυχαγωγία", value: "Ηχοσύστημα · Μικρόφωνο" },
     ],
   },
   {
-    img: fleetBus35,
+    img: fleetSetra,
     type: "BUS",
+    model: "Setra S 315 HD",
+    seats: "50",
+    desc: "Κλασικό premium πούλμαν Setra — γερμανική ποιότητα και άνεση για πολυήμερα ταξίδια.",
+    features: [
+      { icon: Users, label: "50 θέσεις" },
+      { icon: Snowflake, label: "Κλιματισμός" },
+      { icon: Wifi, label: "Wi-Fi" },
+      { icon: Briefcase, label: "Μεγάλος χώρος αποσκευών" },
+      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
+    ],
+    details:
+      "Setra S 315 HD — εμβληματικό γερμανικό πούλμαν υψηλής κατηγορίας. Στιβαρή κατασκευή, αθόρυβη καμπίνα και άνετες θέσεις για ταξίδια μεγάλων αποστάσεων.",
+    ideal: [
+      "Πολυήμερα ταξίδια",
+      "Εξωτερικό",
+      "Συλλόγους",
+      "Premium μετακινήσεις",
+    ],
+    specs: [
+      { icon: Users, label: "Θέσεις", value: "50" },
+      { icon: Briefcase, label: "Αποσκευές", value: "Μεγάλος χώρος" },
+      { icon: Gauge, label: "Μοντέλο", value: "Setra S 315 HD" },
+      { icon: Sparkles, label: "Εξοπλισμός", value: "Wi-Fi · Κλιματισμός" },
+    ],
+  },
+  {
+    img: fleetTourino,
+    type: "BUS",
+    model: "Mercedes Tourino 2010",
     seats: "35",
-    desc: "Λεωφορείο μεσαίας χωρητικότητας — ευέλικτη επιλογή για εταιρικά event, αθλητικούς συλλόγους και ημερήσιες εκδρομές.",
+    desc: "Λευκό Mercedes Tourino μεσαίας χωρητικότητας — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
     features: [
       { icon: Users, label: "35 θέσεις" },
       { icon: Snowflake, label: "Κλιματισμός" },
@@ -119,7 +152,7 @@ const FLEET: FleetItem[] = [
       { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
     ],
     details:
-      "Σύγχρονο λεωφορείο 35 θέσεων με αναβαθμισμένη άνεση και ευελιξία. Συνδυάζει χωρητικότητα και ευκολία στην οδήγηση, ιδανικό για μεσαία γκρουπ και ημερήσιες αποδράσεις.",
+      "Mercedes-Benz Tourino 35 θέσεων με αναβαθμισμένη άνεση και ευελιξία. Συνδυάζει χωρητικότητα και ευκολία στην οδήγηση, ιδανικό για μεσαία γκρουπ και ημερήσιες αποδράσεις.",
     ideal: [
       "Εταιρικά event",
       "Ημερήσιες εκδρομές",
@@ -129,23 +162,51 @@ const FLEET: FleetItem[] = [
     specs: [
       { icon: Users, label: "Θέσεις", value: "35" },
       { icon: Briefcase, label: "Αποσκευές", value: "Άνετος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Comfort Coach" },
+      { icon: Gauge, label: "Μοντέλο", value: "Mercedes Tourino 2010" },
       { icon: Sparkles, label: "Εξοπλισμός", value: "Wi-Fi · Κλιματισμός" },
     ],
   },
   {
-    img: fleetBus26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "Μίνι λεωφορείο για μικρότερα γκρουπ — ευέλικτο σε στενούς δρόμους και ορεινούς προορισμούς.",
+    img: fleetIveco,
+    type: "MIDI BUS",
+    model: "Iveco Rapido 2015",
+    seats: "30",
+    desc: "Iveco Rapido — σύγχρονο midi πούλμαν, ευέλικτο και άνετο για μεσαία γκρουπ.",
     features: [
-      { icon: Users, label: "26 θέσεις" },
+      { icon: Users, label: "30 θέσεις" },
+      { icon: Snowflake, label: "Κλιματισμός" },
+      { icon: Briefcase, label: "Άνετος χώρος αποσκευών" },
+      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
+    ],
+    details:
+      "Iveco Rapido 2015 — σύγχρονο midi λεωφορείο που συνδυάζει ευελιξία, οικονομία και άνεση. Ιδανικό για ημερήσιες εκδρομές και μετακινήσεις σε δύσβατες διαδρομές.",
+    ideal: [
+      "Μεσαία γκρουπ",
+      "Ημερήσιες εκδρομές",
+      "Εταιρικές μετακινήσεις",
+      "Ορεινούς προορισμούς",
+    ],
+    specs: [
+      { icon: Users, label: "Θέσεις", value: "30" },
+      { icon: Briefcase, label: "Αποσκευές", value: "Άνετος χώρος" },
+      { icon: Gauge, label: "Μοντέλο", value: "Iveco Rapido 2015" },
+      { icon: Sparkles, label: "Εξοπλισμός", value: "Κλιματισμός" },
+    ],
+  },
+  {
+    img: fleetAuwarter,
+    type: "MINI BUS",
+    model: "Mercedes Auwärter 818",
+    seats: "19",
+    desc: "Μικρό Mercedes Auwärter 818 — ευέλικτο για VIP μετακινήσεις και μικρές παρέες.",
+    features: [
+      { icon: Users, label: "19 θέσεις" },
       { icon: Snowflake, label: "Κλιματισμός" },
       { icon: Briefcase, label: "Πρακτικός χώρος αποσκευών" },
       { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
     ],
     details:
-      "Ευέλικτο μίνι λεωφορείο 26 θέσεων που φτάνει εκεί που τα μεγάλα δεν μπορούν. Ιδανικό για ορεινές διαδρομές, στενά δρομάκια χωριών και μικρότερες παρέες που θέλουν προσωπική εξυπηρέτηση.",
+      "Mercedes-Benz Auwärter 818 — ευέλικτο μίνι λεωφορείο που φτάνει εκεί που τα μεγάλα δεν μπορούν. Ιδανικό για ορεινές διαδρομές, στενά δρομάκια χωριών και μικρότερες παρέες.",
     ideal: [
       "Ορεινούς προορισμούς",
       "Παραδοσιακά χωριά",
@@ -153,9 +214,9 @@ const FLEET: FleetItem[] = [
       "VIP μετακινήσεις",
     ],
     specs: [
-      { icon: Users, label: "Θέσεις", value: "26" },
+      { icon: Users, label: "Θέσεις", value: "19" },
       { icon: Briefcase, label: "Αποσκευές", value: "Πρακτικός χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Mini Coach" },
+      { icon: Gauge, label: "Μοντέλο", value: "Mercedes Auwärter 818" },
       { icon: Sparkles, label: "Εξοπλισμός", value: "Κλιματισμός" },
     ],
   },
@@ -280,6 +341,9 @@ function ServicesPage() {
                       </span>
                     </div>
                   </div>
+                  <div className="font-display text-sm font-semibold text-ink mb-2 leading-tight">
+                    {f.model}
+                  </div>
                   <div className="h-px w-full bg-ink/10 mb-4" />
                   <p className="text-sm text-ink/75 leading-relaxed mb-5">
                     {f.desc}
@@ -348,7 +412,7 @@ function ServicesPage() {
                 <div className="mt-4 flex items-end justify-between gap-3">
                   <div>
                     <div className="font-display text-[9px] tracking-[0.3em] text-white/60">
-                      ΧΩΡΗΤΙΚΟΤΗΤΑ
+                      {activeFleet.model}
                     </div>
                     <h3 className="mt-1 font-display font-bold text-white text-xl sm:text-2xl tracking-tight">
                       {activeFleet.seats} θέσεων
