@@ -341,6 +341,9 @@ function ServicesPage() {
                       </span>
                     </div>
                   </div>
+                  <div className="font-display text-sm font-semibold text-ink mb-2 leading-tight">
+                    {f.model}
+                  </div>
                   <div className="h-px w-full bg-ink/10 mb-4" />
                   <p className="text-sm text-ink/75 leading-relaxed mb-5">
                     {f.desc}
