@@ -412,7 +412,7 @@ function ServicesPage() {
                 <div className="mt-4 flex items-end justify-between gap-3">
                   <div>
                     <div className="font-display text-[9px] tracking-[0.3em] text-white/60">
-                      ΧΩΡΗΤΙΚΟΤΗΤΑ
+                      {activeFleet.model}
                     </div>
                     <h3 className="mt-1 font-display font-bold text-white text-xl sm:text-2xl tracking-tight">
                       {activeFleet.seats} θέσεων
