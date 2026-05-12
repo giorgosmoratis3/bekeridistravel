@@ -385,7 +385,7 @@ function AboutPage() {
                     </div>
                   </div>
                   <DialogTitle className="font-display text-2xl md:text-3xl font-bold text-ink text-left">
-                    {openFleet.type} {openFleet.seats} θέσεων
+                    {openFleet.model}
                   </DialogTitle>
                   <DialogDescription className="text-base text-ink/75 leading-relaxed text-left pt-2">
                     {openFleet.desc}
