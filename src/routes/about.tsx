@@ -26,7 +26,7 @@ const TIMELINE = [
     year: "2008",
     title: "Ανανέωση στόλου",
     desc: "Επένδυση σε σύγχρονα και ασφαλή λεωφορεία για άνετες μετακινήσεις.",
-    img: fleet52,
+    img: fleetNeoplan,
   },
   {
     year: "2013",
@@ -43,35 +43,52 @@ const TIMELINE = [
   {
     year: "2021",
     title: "Ενίσχυση στόλου",
-    desc: "Νέα οχήματα 26 και 35 θέσεων για ευελιξία σε κάθε τύπο εκδρομής.",
-    img: fleet35,
+    desc: "Νέα οχήματα μικρής και μεσαίας χωρητικότητας για ευελιξία σε κάθε τύπο εκδρομής.",
+    img: fleetTourino,
   },
   {
     year: "Σήμερα",
     title: "Συνεχίζουμε δυνατά",
     desc: "Με χιλιάδες ευχαριστημένους ταξιδιώτες, σχεδιάζουμε το επόμενο ταξίδι σας.",
-    img: fleet26,
+    img: fleetAuwarter,
   },
 ];
 
 const FLEET_PREVIEW = [
   {
-    img: fleet52,
+    img: fleetNeoplan,
     type: "BUS",
+    model: "Neoplan Cityliner 2010",
     seats: "52",
     desc: "Πούλμαν μεγάλης χωρητικότητας για σχολεία, συλλόγους και μεγάλα γκρουπ.",
   },
   {
-    img: fleet35,
+    img: fleetSetra,
     type: "BUS",
+    model: "Setra S 315 HD",
+    seats: "50",
+    desc: "Premium γερμανικό πούλμαν για πολυήμερα ταξίδια και άνετες μετακινήσεις.",
+  },
+  {
+    img: fleetTourino,
+    type: "BUS",
+    model: "Mercedes Tourino 2010",
     seats: "35",
     desc: "Ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
   },
   {
-    img: fleet26,
+    img: fleetIveco,
+    type: "MIDI BUS",
+    model: "Iveco Rapido 2015",
+    seats: "30",
+    desc: "Σύγχρονο midi πούλμαν για μεσαία γκρουπ και ορεινούς προορισμούς.",
+  },
+  {
+    img: fleetAuwarter,
     type: "MINI BUS",
-    seats: "26",
-    desc: "Μίνι λεωφορείο για μικρότερα γκρουπ και ορεινούς προορισμούς.",
+    model: "Mercedes Auwärter 818",
+    seats: "19",
+    desc: "Μικρό λεωφορείο για VIP μετακινήσεις και μικρές παρέες.",
   },
 ];
 
