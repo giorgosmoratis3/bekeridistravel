@@ -7,9 +7,11 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
-import fleet26 from "@/assets/fleet-bus-26.jpg";
-import fleet35 from "@/assets/fleet-bus-35.jpg";
-import fleet52 from "@/assets/fleet-bus-52.jpg";
+import fleetNeoplan from "@/assets/fleet-neoplan-cityliner.jpg";
+import fleetTourino from "@/assets/fleet-mercedes-tourino.jpg";
+import fleetSetra from "@/assets/fleet-setra-315hd.jpg";
+import fleetIveco from "@/assets/fleet-iveco-rapido.jpg";
+import fleetAuwarter from "@/assets/fleet-mercedes-auwarter.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
 import destMeteora from "@/assets/destination-meteora.jpg";
 
