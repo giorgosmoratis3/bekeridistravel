@@ -29,8 +29,8 @@ const OFFICES: Office[] = [
     mobile: { label: "6977 651 811", tel: "+306977651811" },
     email: "bekeridistravel@yahoo.gr",
     hours: "Δευ – Σάβ: 09:00 – 21:00 · Κυριακή: Κλειστά",
-    mapQuery: "Αγριλιά+Λαμίας+Φθιώτιδα",
-    mapsLink: "https://www.google.com/maps/search/?api=1&query=Αγριλιά+Λαμίας+Φθιώτιδα",
+    mapQuery: "38.886,22.473",
+    mapsLink: "https://www.google.com/maps/search/?api=1&query=Αγριλιά+Φθιώτιδας",
   },
 ];
 
