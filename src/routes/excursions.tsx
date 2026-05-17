@@ -124,15 +124,6 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
     description:
       "Διαδρομή στα γραφικά ορεινά χωριά με γεύμα σε παραδοσιακή ταβέρνα και περίπατο στη φύση.",
   },
-  {
-    img: serviceExcursions,
-    name: "Προσκύνημα Τήνου",
-    tag: "Θρησκευτικό",
-    duration: "Κατ' επιλογή",
-    location: "Τήνος",
-    description:
-      "Προσκυνηματική εκδρομή με έμπειρους συνοδούς και πλήρη οργάνωση από την αναχώρηση έως την επιστροφή.",
-  },
 ];
 
 export const Route = createFileRoute("/excursions")({
