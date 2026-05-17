@@ -11,6 +11,10 @@ import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
 import tinosImg from "@/assets/excursion-tinos.jpg";
 import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
+import thessalonikiImg from "@/assets/excursion-thessaloniki.jpg";
+import ionianImg from "@/assets/excursion-ionian.jpg";
+import schoolImg from "@/assets/excursion-school.jpg";
+import pelionImg from "@/assets/excursion-pelion.jpg";
 
 
 const PHONE_TEL = "+306977651811";
@@ -125,7 +129,7 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
       "Διαδρομή στα γραφικά ορεινά χωριά με γεύμα σε παραδοσιακή ταβέρνα και περίπατο στη φύση.",
   },
   {
-    img: trikeriImg,
+    img: pelionImg,
     name: "Πήλιο & Παραλίες",
     tag: "Σαββατοκύριακο",
     duration: "Κατ' επιλογή",
@@ -143,7 +147,7 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
       "Οργανωμένα προσκυνήματα σε σημαντικά μοναστήρια και ιερούς τόπους της Ελλάδας με έμπειρους συνοδούς.",
   },
   {
-    img: tinosImg,
+    img: thessalonikiImg,
     name: "Θεσσαλονίκη",
     tag: "City Break",
     duration: "Κατ' επιλογή",
@@ -152,7 +156,7 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
       "Διήμερη ή τριήμερη απόδραση στη συμπρωτεύουσα: παραλιακή, Άνω Πόλη, μουσεία και αυθεντική γαστρονομία.",
   },
   {
-    img: tinosPilgrimageImg,
+    img: ionianImg,
     name: "Επτάνησα",
     tag: "Πολυήμερο",
     duration: "Κατ' επιλογή",
@@ -161,7 +165,7 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
       "Πολυήμερη εκδρομή σε Κέρκυρα, Λευκάδα ή Κεφαλονιά με μεταφορά, διαμονή και ξεναγήσεις στα ομορφότερα σημεία.",
   },
   {
-    img: athens,
+    img: schoolImg,
     name: "Σχολικές Εκδρομές",
     tag: "Ομαδικό",
     duration: "Κατ' επιλογή",
