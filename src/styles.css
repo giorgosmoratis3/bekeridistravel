@@ -203,6 +203,9 @@
     .group.scroll-active img {
       transform: scale(1.08);
     }
+    .hover-bar.scroll-active::after {
+      transform: scaleX(1);
+    }
   }
 
   /* Subtle floating clouds */
