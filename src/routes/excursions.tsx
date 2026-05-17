@@ -6,6 +6,10 @@ import meteora from "@/assets/destination-meteora.jpg";
 import island from "@/assets/destination-island.jpg";
 import athens from "@/assets/destination-athens.jpg";
 import village from "@/assets/destination-village.jpg";
+import trikeriImg from "@/assets/excursion-trikeri.jpg";
+import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
+import tinosImg from "@/assets/excursion-tinos.jpg";
+import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 
@@ -33,7 +37,7 @@ type CustomExcursion = {
 
 const READY_EXCURSIONS: ReadyExcursion[] = [
   {
-    img: village,
+    img: trikeriImg,
     name: "Τρίκερι",
     date: "23 Μαΐου",
     tag: "Μονοήμερη Οδική",
@@ -43,7 +47,7 @@ const READY_EXCURSIONS: ReadyExcursion[] = [
       "Μονοήμερη οδική εκδρομή στο γραφικό Τρίκερι του Πηλίου, με χρόνο για περίπατο και γεύμα δίπλα στη θάλασσα.",
   },
   {
-    img: meteora,
+    img: prousiotissaImg,
     name: "Παναγία Προυσιώτισσα",
     date: "7 Ιουνίου",
     tag: "Προσκύνημα",
@@ -53,7 +57,7 @@ const READY_EXCURSIONS: ReadyExcursion[] = [
       "Μονοήμερη οδική εκδρομή — επίσκεψη στο ιστορικό μοναστήρι της Παναγίας Προυσιώτισσας στα βουνά της Ευρυτανίας.",
   },
   {
-    img: island,
+    img: tinosImg,
     name: "Τήνος",
     date: "30 – 31 Αυγούστου",
     tag: "Διήμερη",
@@ -63,7 +67,7 @@ const READY_EXCURSIONS: ReadyExcursion[] = [
       "Διήμερη εκδρομή στο νησί της Τήνου, με προσκύνημα στην Παναγία και ελεύθερο χρόνο στη Χώρα.",
   },
   {
-    img: island,
+    img: tinosPilgrimageImg,
     name: "Τήνος — Προσκύνημα & Περιήγηση",
     date: "16 – 17 Σεπτεμβρίου",
     tag: "Διήμερη Προσκυνηματική",
