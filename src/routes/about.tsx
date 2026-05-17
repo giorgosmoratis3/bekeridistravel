@@ -311,14 +311,14 @@ function AboutPage() {
                 className="reveal group fleet-card text-left flex flex-col overflow-hidden"
                 style={{ transitionDelay: `${i * 120}ms` }}
               >
-                <div className="relative overflow-hidden bg-[hsl(var(--muted))]">
+                <div className="relative overflow-hidden">
                   <img
                     src={f.img}
                     alt={`${f.type} ${f.seats} θέσεων`}
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="w-full h-64 md:h-80 object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-7 md:p-9 flex flex-col flex-1">
@@ -356,11 +356,11 @@ function AboutPage() {
         <DialogContent className="max-w-2xl p-0 overflow-hidden">
           {openFleet && (
             <div>
-              <div className="bg-[hsl(var(--muted))]">
+              <div>
                 <img
                   src={openFleet.img}
                   alt={`${openFleet.type} ${openFleet.seats} θέσεων`}
-                  className="w-full h-64 md:h-80 object-contain"
+                  className="w-full h-64 md:h-80 object-cover object-center"
                 />
               </div>
               <div className="p-6 md:p-8">
