@@ -11,7 +11,7 @@ import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
 import tinosImg from "@/assets/excursion-tinos.jpg";
 import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import serviceExcursions from "@/assets/service-excursions.jpg";
+
 
 const PHONE_TEL = "+306977651811";
 const PHONE_LABEL = "6977 651 811";
