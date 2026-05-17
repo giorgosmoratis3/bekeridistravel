@@ -6,6 +6,7 @@ import { CountUp } from "@/components/count-up";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
+import aboutHistory2003 from "@/assets/about-history-2003.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
@@ -30,25 +31,25 @@ const TIMELINE = [
     year: "2003",
     title: "Η αρχή του ταξιδιού",
     desc: "Ιδρύεται η Bekeridis Travel στον Δομοκό με όραμα και αγάπη για το ταξίδι.",
-    img: heroBus,
+    img: aboutHistory2003,
   },
   {
     year: "2008",
     title: "Ανανέωση στόλου",
     desc: "Επένδυση σε σύγχρονα και ασφαλή λεωφορεία για άνετες μετακινήσεις.",
-    img: fleet52,
+    img: heroBus,
   },
   {
     year: "2013",
     title: "Σχολικές & ομαδικές εκδρομές",
     desc: "Καθιερωνόμαστε ως πρώτη επιλογή για σχολεία και συλλόγους της περιοχής.",
-    img: destMeteora,
+    img: aboutMission,
   },
   {
     year: "2018",
     title: "Πολυήμερα ταξίδια",
     desc: "Επεκτεινόμαστε σε οργανωμένα πολυήμερα ταξίδια στην Ελλάδα και το εξωτερικό.",
-    img: destAthens,
+    img: aboutMountains,
   },
   {
     year: "2021",
