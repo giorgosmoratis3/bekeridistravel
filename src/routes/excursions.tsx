@@ -11,7 +11,7 @@ import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
 import tinosImg from "@/assets/excursion-tinos.jpg";
 import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import serviceExcursions from "@/assets/service-excursions.jpg";
+
 
 const PHONE_TEL = "+306977651811";
 const PHONE_LABEL = "6977 651 811";
@@ -123,15 +123,6 @@ const CUSTOM_EXCURSIONS: CustomExcursion[] = [
     location: "Πήλιο",
     description:
       "Διαδρομή στα γραφικά ορεινά χωριά με γεύμα σε παραδοσιακή ταβέρνα και περίπατο στη φύση.",
-  },
-  {
-    img: serviceExcursions,
-    name: "Προσκύνημα Τήνου",
-    tag: "Θρησκευτικό",
-    duration: "Κατ' επιλογή",
-    location: "Τήνος",
-    description:
-      "Προσκυνηματική εκδρομή με έμπειρους συνοδούς και πλήρη οργάνωση από την αναχώρηση έως την επιστροφή.",
   },
 ];
 

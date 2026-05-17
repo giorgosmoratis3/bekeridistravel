@@ -197,6 +197,14 @@
     transform: scale(1);
   }
 
+  /* Mobile/touch: animate images on scroll like a hover would on desktop */
+  @media (hover: none) {
+    .group.scroll-active > img,
+    .group.scroll-active img {
+      transform: scale(1.08);
+    }
+  }
+
   /* Subtle floating clouds */
   @keyframes float-slow {
     0%, 100% { transform: translateY(0) translateX(0); }
