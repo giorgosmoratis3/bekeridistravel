@@ -14,23 +14,23 @@ type Office = {
 const OFFICES: Office[] = [
   {
     title: "ΓΡΑΦΕΙΟ ΔΟΜΟΚΟΥ",
-    address: "Δομοκός, Φθιώτιδα",
+    address: "Κεντρική Πλατεία, Δομοκός, Φθιώτιδα",
     phones: [{ label: "22320 22255", tel: "+302232022255" }],
     mobile: { label: "6977 651 811", tel: "+306977651811" },
     email: "bekeridistravel@yahoo.gr",
     hours: "Δευ – Σάβ: 09:00 – 21:00 · Κυριακή: Κλειστά",
-    mapQuery: "Domokos,+Greece",
-    mapsLink: "https://www.google.com/maps/search/?api=1&query=Domokos+Greece",
+    mapQuery: "Κεντρική+Πλατεία+Δομοκού",
+    mapsLink: "https://www.google.com/maps/search/?api=1&query=Κεντρική+Πλατεία+Δομοκού",
   },
   {
-    title: "ΓΡΑΦΕΙΟ ΛΑΜΙΑΣ",
-    address: "Λαμία, Φθιώτιδα",
+    title: "ΥΠΟΚΑΤΑΣΤΗΜΑ ΛΑΜΙΑΣ",
+    address: "Αγριλιά, Λαμία, Φθιώτιδα",
     phones: [{ label: "22310 69197", tel: "+302231069197" }],
     mobile: { label: "6977 651 811", tel: "+306977651811" },
     email: "bekeridistravel@yahoo.gr",
     hours: "Δευ – Σάβ: 09:00 – 21:00 · Κυριακή: Κλειστά",
-    mapQuery: "Lamia,+Greece",
-    mapsLink: "https://www.google.com/maps/search/?api=1&query=Lamia+Greece",
+    mapQuery: "Αγριλιά+Λαμίας",
+    mapsLink: "https://www.google.com/maps/search/?api=1&query=Αγριλιά+Λαμίας",
   },
 ];
 
