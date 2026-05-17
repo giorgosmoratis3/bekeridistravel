@@ -123,7 +123,7 @@ function AboutPage() {
             <div className="mission-image-frame">
               <img
                 src={aboutMission}
-                alt="Λίμνη ανάμεσα σε βουνά"
+                alt="Ταξιδιώτες επιβιβάζονται σε λεωφορείο της Bekeridis Travel"
                 width={1024}
                 height={768}
                 loading="lazy"
