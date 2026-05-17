@@ -334,7 +334,7 @@ function ExcursionsPage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             eyebrow="ΚΑΤΑ ΠΑΡΑΓΓΕΛΙΑ"
-            title="CUSTOM ΕΚΔΡΟΜΕΣ"
+            title="ΕΚΔΡΟΜΕΣ"
             subtitle="Επιλέξτε προορισμό και επικοινωνήστε μαζί μας — διοργανώνουμε την εκδρομή στα μέτρα σας."
           />
 
