@@ -11,6 +11,10 @@ import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
 import tinosImg from "@/assets/excursion-tinos.jpg";
 import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
+import thessalonikiImg from "@/assets/excursion-thessaloniki.jpg";
+import ionianImg from "@/assets/excursion-ionian.jpg";
+import schoolImg from "@/assets/excursion-school.jpg";
+import pelionImg from "@/assets/excursion-pelion.jpg";
 
 
 const PHONE_TEL = "+306977651811";
