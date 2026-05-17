@@ -356,11 +356,11 @@ function AboutPage() {
         <DialogContent className="max-w-2xl p-0 overflow-hidden">
           {openFleet && (
             <div>
-              <div className="bg-[hsl(var(--muted))]">
+              <div>
                 <img
                   src={openFleet.img}
                   alt={`${openFleet.type} ${openFleet.seats} θέσεων`}
-                  className="w-full h-64 md:h-80 object-contain"
+                  className="w-full h-64 md:h-80 object-cover object-center"
                 />
               </div>
               <div className="p-6 md:p-8">
