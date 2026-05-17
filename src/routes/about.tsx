@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CountUp } from "@/components/count-up";
@@ -12,6 +12,18 @@ import fleet35 from "@/assets/fleet-bus-35.jpg";
 import fleet52 from "@/assets/fleet-bus-52.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
 import destMeteora from "@/assets/destination-meteora.jpg";
+
+const assetUrl = (path: string) => new URL(path, import.meta.url).href;
+
+const IVECO_GALLERY = Array.from({ length: 12 }, (_, index) =>
+  assetUrl(`../assets/gallery/iveco-${index + 1}.jpg`),
+);
+const TOURINO_GALLERY = Array.from({ length: 12 }, (_, index) =>
+  assetUrl(`../assets/gallery/tourino-${index + 1}.jpg`),
+);
+const NEOPLAN_GALLERY = Array.from({ length: 12 }, (_, index) =>
+  assetUrl(`../assets/gallery/neoplan-${index + 1}.jpg`),
+);
 
 const TIMELINE = [
   {
@@ -58,20 +70,23 @@ const FLEET_PREVIEW = [
     type: "BUS",
     seats: "52",
     desc: "Πούλμαν μεγάλης χωρητικότητας για σχολεία, συλλόγους και μεγάλα γκρουπ.",
+    gallery: NEOPLAN_GALLERY,
   },
   {
     img: fleet35,
     type: "BUS",
     seats: "35",
     desc: "Ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
+    gallery: TOURINO_GALLERY,
   },
   {
     img: fleet26,
     type: "MINI BUS",
     seats: "26",
-    desc: "Μίνι λεωφορείο για μικρότερα γκρουπ και ορεινούς προορισμούς.",
+    desc: "IVECO mini bus για μικρότερα γκρουπ και ορεινούς προορισμούς.",
+    gallery: IVECO_GALLERY,
   },
-];
+] as const;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
