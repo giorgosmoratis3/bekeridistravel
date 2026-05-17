@@ -29,7 +29,7 @@ const OFFICES: Office[] = [
     mobile: { label: "6977 651 811", tel: "+306977651811" },
     email: "bekeridistravel@yahoo.gr",
     hours: "Δευ – Σάβ: 09:00 – 21:00 · Κυριακή: Κλειστά",
-    mapQuery: "38.886,22.473",
+    mapQuery: "Αγριλιά+Φθιώτιδας",
     mapsLink: "https://www.google.com/maps/search/?api=1&query=Αγριλιά+Φθιώτιδας",
   },
 ];
@@ -151,7 +151,7 @@ export function OfficesSection(_props: {
                 >
                   <iframe
                     title={`${o.title} — Χάρτης`}
-                    src={`https://www.google.com/maps?q=${o.mapQuery}&hl=el&z=14&output=embed`}
+                    src={`https://maps.google.com/maps?q=${o.mapQuery}&t=m&z=15&ie=UTF8&iwloc=B&output=embed`}
                     width="100%"
                     height="100%"
                     className="w-full flex-1 min-h-[340px]"
