@@ -299,32 +299,22 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* FLEET DETAILS — Liquid Glass */}
+      {/* FLEET DETAILS */}
       <Dialog open={!!activeFleet} onOpenChange={(o) => !o && setActiveFleet(null)}>
-        <DialogContent className="max-w-sm sm:max-w-md p-0 overflow-hidden border-0 bg-transparent shadow-none [&>button]:hidden">
+        <DialogContent className="max-w-sm sm:max-w-md p-0 overflow-hidden border border-ink/10 bg-white shadow-2xl rounded-2xl [&>button]:hidden">
           {activeFleet && (
-            <div className="trip-glass relative overflow-hidden rounded-3xl max-h-[85vh] flex flex-col">
-              {/* Blurred background image */}
-              <img
-                src={activeFleet.img}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-50"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-white/5" />
-              <div className="absolute inset-0 bg-ink/55" />
-
+            <div className="relative max-h-[85vh] flex flex-col">
               {/* Close */}
               <button
                 type="button"
                 onClick={() => setActiveFleet(null)}
                 aria-label="Κλείσιμο"
-                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full border border-white/25 bg-white/10 backdrop-blur-xl text-white/90 hover:bg-white/20 transition-all flex items-center justify-center"
+                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full border border-ink/15 bg-white text-ink/70 hover:bg-ink hover:text-white transition-all flex items-center justify-center"
               >
                 <span className="text-base leading-none">×</span>
               </button>
 
-              <div className="relative z-10 p-5 sm:p-6 overflow-y-auto">
+              <div className="p-5 sm:p-6 overflow-y-auto">
                 <DialogHeader className="sr-only">
                   <DialogTitle>
                     {activeFleet.type} {activeFleet.seats} θέσεων
@@ -333,13 +323,13 @@ function ServicesPage() {
                 </DialogHeader>
 
                 {/* Hero image */}
-                <div className="relative h-32 sm:h-36 overflow-hidden rounded-xl border border-white/20 shadow-[0_15px_40px_-20px_rgba(0,0,0,0.6)] bg-white/5">
+                <div className="relative h-36 sm:h-44 overflow-hidden rounded-xl border border-ink/10 bg-ink/5">
                   <img
                     src={activeFleet.img}
                     alt={`${activeFleet.type} ${activeFleet.seats} θέσεων`}
-                    className="absolute inset-0 w-full h-full object-contain p-2"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full border border-white/30 bg-white/15 backdrop-blur-md font-display text-[9px] tracking-[0.25em] text-white">
+                  <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-brand font-display text-[9px] tracking-[0.25em] text-brand-foreground">
                     {activeFleet.type}
                   </div>
                 </div>
@@ -347,20 +337,20 @@ function ServicesPage() {
                 {/* Title */}
                 <div className="mt-4 flex items-end justify-between gap-3">
                   <div>
-                    <div className="font-display text-[9px] tracking-[0.3em] text-white/60">
+                    <div className="font-display text-[9px] tracking-[0.3em] text-brand">
                       ΧΩΡΗΤΙΚΟΤΗΤΑ
                     </div>
-                    <h3 className="mt-1 font-display font-bold text-white text-xl sm:text-2xl tracking-tight">
+                    <h3 className="mt-1 font-display font-bold text-ink text-xl sm:text-2xl tracking-tight">
                       {activeFleet.seats} θέσεων
                     </h3>
                   </div>
-                  <span className="font-display text-4xl sm:text-5xl font-bold text-white/15 leading-none">
+                  <span className="font-display text-4xl sm:text-5xl font-bold text-ink/10 leading-none">
                     {activeFleet.seats}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="mt-3 text-white/80 leading-relaxed text-[13px]">
+                <p className="mt-3 text-ink/75 leading-relaxed text-[13px]">
                   {activeFleet.details}
                 </p>
 
@@ -369,13 +359,13 @@ function ServicesPage() {
                   {activeFleet.specs.map(({ icon: Icon, label, value }) => (
                     <div
                       key={label}
-                      className="rounded-lg border border-white/15 bg-white/8 backdrop-blur-md p-2.5"
+                      className="rounded-lg border border-ink/10 bg-ink/[0.03] p-2.5"
                     >
-                      <div className="flex items-center gap-1.5 text-white/60 text-[8px] tracking-[0.2em] font-display uppercase">
+                      <div className="flex items-center gap-1.5 text-ink/55 text-[8px] tracking-[0.2em] font-display uppercase">
                         <Icon size={10} strokeWidth={1.8} />
                         {label}
                       </div>
-                      <div className="mt-0.5 text-white text-[12px] font-medium">
+                      <div className="mt-0.5 text-ink text-[12px] font-medium">
                         {value}
                       </div>
                     </div>
@@ -384,14 +374,14 @@ function ServicesPage() {
 
                 {/* Features */}
                 <div className="mt-4">
-                  <div className="font-display text-[9px] tracking-[0.3em] text-white/60 mb-2">
+                  <div className="font-display text-[9px] tracking-[0.3em] text-brand mb-2">
                     ΕΞΟΠΛΙΣΜΟΣ
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {activeFleet.features.map(({ icon: Icon, label }) => (
                       <span
                         key={label}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-[10px] text-white/90"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-ink/15 bg-white text-[10px] text-ink/80"
                       >
                         <Icon size={11} strokeWidth={1.8} />
                         {label}
@@ -402,10 +392,10 @@ function ServicesPage() {
 
                 {/* Ideal for */}
                 <div className="mt-4">
-                  <div className="font-display text-[9px] tracking-[0.3em] text-white/60 mb-2">
+                  <div className="font-display text-[9px] tracking-[0.3em] text-brand mb-2">
                     ΙΔΑΝΙΚΟ ΓΙΑ
                   </div>
-                  <ul className="grid grid-cols-2 gap-y-1 gap-x-3 text-white/85 text-[12px]">
+                  <ul className="grid grid-cols-2 gap-y-1 gap-x-3 text-ink/80 text-[12px]">
                     {activeFleet.ideal.map((it) => (
                       <li key={it} className="flex items-center gap-2">
                         <span className="w-1 h-1 rounded-full bg-brand" />
@@ -416,12 +406,12 @@ function ServicesPage() {
                 </div>
 
                 {/* Divider */}
-                <div className="mt-4 h-px w-full bg-white/15" />
+                <div className="mt-4 h-px w-full bg-ink/10" />
 
                 {/* CTA */}
                 <a
                   href={`tel:${PHONE_TEL}`}
-                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/25 bg-white/15 backdrop-blur-xl text-white font-display text-[10px] tracking-[0.3em] hover:bg-white hover:text-ink transition-all"
+                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand text-brand-foreground font-display text-[10px] tracking-[0.3em] hover:bg-ink transition-all"
                 >
                   <Phone size={12} strokeWidth={2} />
                   {PHONE_LABEL}
