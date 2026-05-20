@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { ReviewsSection } from "@/components/reviews-section";
 import { OfficesSection } from "@/components/offices-section";
-import { DestinationsSection } from "@/components/destinations-section";
+
 import { ContactForm } from "@/components/contact-form";
 import heroBus from "@/assets/hero-bus.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
@@ -193,6 +193,74 @@ function HomePage() {
               </div>
             </div>
 
+            {/* RIGHT — Liquid glass trips panel */}
+            <div className="lg:col-span-5 animate-[fade-in-up_1s_cubic-bezier(0.22,1,0.36,1)_0.6s_both]">
+              <div className="relative rounded-3xl border border-white/25 bg-white/10 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.35)] overflow-hidden">
+                {/* glossy highlight */}
+                <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/25 via-white/5 to-transparent" />
+                <div className="pointer-events-none absolute -top-1/2 -left-1/3 w-2/3 h-full rotate-12 bg-gradient-to-r from-white/20 to-transparent blur-2xl" />
+
+                <div className="relative p-5 sm:p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <p className="font-display text-[10px] tracking-[0.35em] text-white/70">
+                        ΕΚΔΡΟΜΕΣ
+                      </p>
+                      <h2 className="font-display text-xl sm:text-2xl font-bold text-white mt-1">
+                        Επόμενες αναχωρήσεις
+                      </h2>
+                    </div>
+                    <Link
+                      to="/excursions"
+                      className="hidden sm:inline-flex items-center gap-1 text-[10px] font-display tracking-[0.25em] text-white/85 hover:text-brand transition-colors"
+                    >
+                      ΟΛΕΣ
+                      <ArrowUpRight size={14} strokeWidth={2.2} />
+                    </Link>
+                  </div>
+
+                  <ul className="space-y-2.5 max-h-[420px] overflow-y-auto pr-1 [scrollbar-width:thin]">
+                    {HERO_TRIPS.map((t) => (
+                      <li key={t.number}>
+                        <Link
+                          to="/excursions"
+                          className="group flex items-center gap-3 p-2.5 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/15 hover:border-white/35 transition-all duration-300"
+                        >
+                          <img
+                            src={t.img}
+                            alt={t.name}
+                            loading="lazy"
+                            className="w-14 h-14 rounded-xl object-cover flex-shrink-0"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2">
+                              <span className="font-display text-[10px] tracking-[0.25em] text-white/60">
+                                {t.number}
+                              </span>
+                              <span className="font-display text-[10px] tracking-[0.2em] text-brand">
+                                {t.tag.toUpperCase()}
+                              </span>
+                            </div>
+                            <div className="font-display font-semibold text-white text-sm sm:text-base truncate">
+                              {t.name}
+                            </div>
+                            <div className="text-[11px] text-white/65 truncate">
+                              {t.location} · {t.duration}
+                            </div>
+                          </div>
+                          <ArrowUpRight
+                            size={16}
+                            strokeWidth={2.2}
+                            className="text-white/70 group-hover:text-brand group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                          />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -267,8 +335,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* DESTINATIONS */}
-      <DestinationsSection />
 
       {/* ABOUT US */}
       <section className="relative py-20 md:py-28 px-5 sm:px-6 bg-background overflow-hidden">
