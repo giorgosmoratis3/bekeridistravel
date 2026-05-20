@@ -9,6 +9,7 @@ import aboutMission from "@/assets/about-mission.jpg";
 import aboutHistory2003 from "@/assets/about-history-2003.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
+import fleet30 from "@/assets/fleet-bus-30.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
 import fleet52 from "@/assets/fleet-bus-52.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
@@ -78,6 +79,13 @@ const FLEET_PREVIEW = [
     type: "BUS",
     seats: "35",
     desc: "Ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
+    gallery: TOURINO_GALLERY,
+  },
+  {
+    img: fleet30,
+    type: "BUS",
+    seats: "30",
+    desc: "Mercedes-Benz 818 Jetliner / Auwärter — άνετο midibus 30 θέσεων.",
     gallery: TOURINO_GALLERY,
   },
   {
@@ -302,7 +310,7 @@ function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {FLEET_PREVIEW.map((f, i) => (
               <button
                 type="button"
