@@ -197,65 +197,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ΕΚΔΡΟΜΕΣ */}
-      <section className="py-20 md:py-28 px-5 sm:px-6 bg-background">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12 md:mb-16 reveal">
-            <p className="font-display text-xs tracking-[0.4em] text-brand mb-3">
-              ΕΚΔΡΟΜΕΣ
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-ink tracking-wide">
-              ΕΠΟΜΕΝΕΣ ΑΝΑΧΩΡΗΣΕΙΣ
-            </h2>
-            <div className="mx-auto mt-4 h-[3px] w-16 bg-brand" />
-          </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {HERO_TRIPS.map((t, i) => (
-              <article
-                key={t.number}
-                className="reveal group bg-white shadow-soft overflow-hidden flex flex-col"
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={t.img}
-                    alt={t.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3 px-3 py-1.5 bg-background/90 backdrop-blur-sm text-[10px] font-display tracking-[0.2em] text-brand">
-                    {t.tag.toUpperCase()}
-                  </div>
-                  <div className="absolute top-3 right-3 font-display text-xs tracking-[0.2em] text-white/90">
-                    {t.number}
-                  </div>
-                </div>
-                <div className="p-5 md:p-6 flex flex-col flex-1">
-                  <h3 className="font-display font-bold text-lg md:text-xl text-ink group-hover:text-brand transition-colors">
-                    {t.name}
-                  </h3>
-                  <div className="mt-2 flex items-center gap-3 text-xs font-display tracking-[0.15em] text-ink/60">
-                    <span>{t.duration.toUpperCase()}</span>
-                    <span className="h-1 w-1 rounded-full bg-ink/30" />
-                    <span>{t.location.toUpperCase()}</span>
-                  </div>
-                  <p className="mt-3 text-sm text-ink/70 leading-relaxed flex-1">
-                    {t.description}
-                  </p>
-                  <Link
-                    to="/contact"
-                    className="mt-5 inline-flex items-center gap-2 font-display text-xs tracking-[0.25em] text-ink group-hover:text-brand transition-colors"
-                  >
-                    ΚΡΑΤΗΣΗ
-                    <ArrowUpRight size={14} strokeWidth={2.2} />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* SERVICES PREVIEW */}
       <section className="py-20 md:py-28 px-5 sm:px-6 bg-white">
