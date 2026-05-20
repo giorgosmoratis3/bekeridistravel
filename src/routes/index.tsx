@@ -139,15 +139,7 @@ const SERVICES = [
 ];
 
 function HomePage() {
-  const [activeTrip, setActiveTrip] = useState<HeroTrip | null>(null);
-  const tripsScrollerRef = useRef<HTMLDivElement>(null);
 
-  const scrollTrips = (dir: 1 | -1) => {
-    const el = tripsScrollerRef.current;
-    if (!el) return;
-    const amount = el.clientWidth * 0.7 * dir;
-    el.scrollBy({ left: amount, behavior: "smooth" });
-  };
 
   return (
     <PageShell>
