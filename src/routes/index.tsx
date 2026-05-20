@@ -313,13 +313,13 @@ function HomePage() {
                 </DialogHeader>
 
                 {/* Hero image — small rounded frame */}
-                <div className="relative h-44 sm:h-52 overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)] bg-ink/40">
                   <img
                     src={activeTrip.img}
                     alt={activeTrip.name}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 to-transparent" />
                   <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full border border-white/30 bg-white/15 backdrop-blur-md font-display text-[9px] tracking-[0.25em] text-white">
                     {activeTrip.tag}
                   </div>
