@@ -25,6 +25,7 @@ import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
 import fleetBus52 from "@/assets/fleet-bus-52.jpg";
 import fleetBus35 from "@/assets/fleet-bus-35.jpg";
+import fleetBus30 from "@/assets/fleet-bus-30.jpg";
 import fleetBus26 from "@/assets/fleet-bus-26.jpg";
 
 const PHONE_TEL = "+306977651811";
