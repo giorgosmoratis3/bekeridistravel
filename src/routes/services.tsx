@@ -135,6 +135,33 @@ const FLEET: FleetItem[] = [
     ],
   },
   {
+    img: fleetBus30,
+    type: "BUS",
+    seats: "30",
+    desc: "Mercedes-Benz 818 Jetliner / Auwärter — ευέλικτο midibus 30 θέσεων με κορυφαία άνεση και αξιοπιστία.",
+    features: [
+      { icon: Users, label: "30 θέσεις" },
+      { icon: Snowflake, label: "Κλιματισμός" },
+      { icon: Wifi, label: "Wi-Fi" },
+      { icon: Briefcase, label: "Άνετος χώρος αποσκευών" },
+      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
+    ],
+    details:
+      "Mercedes-Benz 818 Jetliner κατασκευής Auwärter, ένα σύγχρονο midibus 30 θέσεων που συνδυάζει τη γερμανική μηχανική με υψηλή άνεση επιβατών. Ιδανική επιλογή για μεσαία γκρουπ, ημερήσιες εκδρομές και ταξίδια σε προορισμούς όπου χρειάζεται ευελιξία χωρίς συμβιβασμό στην ποιότητα.",
+    ideal: [
+      "Μεσαία γκρουπ",
+      "Ημερήσιες εκδρομές",
+      "Εταιρικές μετακινήσεις",
+      "Ιδιωτικές εκδηλώσεις",
+    ],
+    specs: [
+      { icon: Users, label: "Θέσεις", value: "30" },
+      { icon: Briefcase, label: "Αποσκευές", value: "Άνετος χώρος" },
+      { icon: Gauge, label: "Κατηγορία", value: "Mercedes-Benz 818 Jetliner / Auwärter" },
+      { icon: Sparkles, label: "Εξοπλισμός", value: "Wi-Fi · Κλιματισμός" },
+    ],
+  },
+  {
     img: fleetBus26,
     type: "MINI BUS",
     seats: "26",
