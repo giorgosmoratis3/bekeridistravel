@@ -267,8 +267,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* DESTINATIONS */}
-      <DestinationsSection />
 
       {/* ABOUT US */}
       <section className="relative py-20 md:py-28 px-5 sm:px-6 bg-background overflow-hidden">
