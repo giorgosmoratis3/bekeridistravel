@@ -1,13 +1,5 @@
-import { useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Phone, MapPin, Clock, ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
+import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { ReviewsSection } from "@/components/reviews-section";
 import { OfficesSection } from "@/components/offices-section";
