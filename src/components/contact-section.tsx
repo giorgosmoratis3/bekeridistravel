@@ -101,7 +101,7 @@ export function ContactSection() {
                   </span>
                 </div>
                 <p className="text-ink/85 text-sm mt-1">
-                  Δευ – Σάβ: 09:00 – 21:00 · Κυριακή: Κλειστά
+                  Δευ – Σάβ: 08:00 – 14:00 & 17:00 – 20:00 · Κυριακή: Κλειστά
                 </p>
               </div>
             </div>
