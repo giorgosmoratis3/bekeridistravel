@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { ReviewsSection } from "@/components/reviews-section";
 import { OfficesSection } from "@/components/offices-section";
-import { DestinationsSection } from "@/components/destinations-section";
+
 import { ContactForm } from "@/components/contact-form";
 import heroBus from "@/assets/hero-bus.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
