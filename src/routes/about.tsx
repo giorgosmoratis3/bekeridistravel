@@ -82,6 +82,13 @@ const FLEET_PREVIEW = [
     gallery: TOURINO_GALLERY,
   },
   {
+    img: fleet30,
+    type: "BUS",
+    seats: "30",
+    desc: "Mercedes-Benz 818 Jetliner / Auwärter — άνετο midibus 30 θέσεων.",
+    gallery: TOURINO_GALLERY,
+  },
+  {
     img: fleet26,
     type: "MINI BUS",
     seats: "26",
