@@ -205,11 +205,17 @@
     }
     .hover-bar.scroll-active::after {
       transform: scaleX(1);
+      transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .group .js-grow-bar {
+      width: 0 !important;
+      transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .group.scroll-active .js-grow-bar {
       width: 100% !important;
     }
   }
+
 
 
   /* Subtle floating clouds */
