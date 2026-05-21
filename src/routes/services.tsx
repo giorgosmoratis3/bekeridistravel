@@ -1,36 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  Users,
-  Snowflake,
-  Wifi,
-  ShieldCheck,
-  Briefcase,
-  Phone,
-  Gauge,
-  Sparkles,
-  Music2,
-} from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { PageShell } from "@/components/page-shell";
+import { FleetDialog } from "@/components/fleet-dialog";
+import { FLEET, type FleetItem } from "@/data/fleet";
 import servicesBanner from "@/assets/services-banner.jpg";
 import serviceBus from "@/assets/service-bus.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import fleetBus52 from "@/assets/fleet-bus-52.jpg";
-import fleetBus51 from "@/assets/fleet-bus-51.jpg";
-import fleetBus35 from "@/assets/fleet-bus-35.jpg";
-import fleetBus30 from "@/assets/fleet-bus-30.jpg";
-import fleetBus26 from "@/assets/fleet-bus-26.jpg";
-
-const PHONE_TEL = "+306977651811";
-const PHONE_LABEL = "6977 651 811";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -50,6 +26,7 @@ export const Route = createFileRoute("/services")({
   }),
   component: ServicesPage,
 });
+
 
 const SERVICES = [
   {
