@@ -303,7 +303,7 @@ function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {FLEET.map((f, i) => (
               <button
                 key={f.seats}
