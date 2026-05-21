@@ -281,7 +281,7 @@ function AboutPage() {
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="w-full h-64 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 md:h-80 object-contain object-center p-4 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-7 md:p-9 flex flex-col flex-1">
