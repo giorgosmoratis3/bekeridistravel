@@ -207,12 +207,19 @@
       transform: scaleX(1);
       transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .group .js-grow-bar {
+    .js-grow-bar {
       width: 0 !important;
       transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .group.scroll-active .js-grow-bar {
+    .group.scroll-active .js-grow-bar,
+    .service-reveal.is-visible .js-grow-bar,
+    .is-visible .js-grow-bar {
       width: 100% !important;
+    }
+    /* Reveal hover CTA overlay on mobile once the card scrolls into view */
+    .service-reveal.is-visible .mobile-show {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
     }
   }
 

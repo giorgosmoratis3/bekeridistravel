@@ -409,7 +409,7 @@ function HomePage() {
                       {s.badge}
                     </div>
                     {/* Hover CTA */}
-                    <div className="absolute inset-x-0 bottom-0 z-[2] p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="mobile-show absolute inset-x-0 bottom-0 z-[2] p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <div className="flex items-center justify-between gap-3 text-white">
                         <span className="font-display text-xs tracking-[0.25em]">
                           {s.hash === "fleet"
