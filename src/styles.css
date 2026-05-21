@@ -225,8 +225,12 @@
     /* Rotate the arrow icon on mobile once visible (mirrors desktop hover) */
     .service-reveal.is-visible .mobile-show .rotate-arrow,
     .service-reveal.is-visible .mobile-show span[class*="-rotate-12"] {
+      rotate: 0deg !important;
       transform: rotate(0deg) !important;
-      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s !important;
+      transition-property: rotate, transform !important;
+      transition-duration: 0.9s !important;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+      transition-delay: 0.5s !important;
     }
   }
 
