@@ -1,33 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CountUp } from "@/components/count-up";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { FleetDialog } from "@/components/fleet-dialog";
+import { FLEET, type FleetItem } from "@/data/fleet";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutHistory2003 from "@/assets/about-history-2003.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
-import fleet30 from "@/assets/fleet-bus-30.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
-import fleet51 from "@/assets/fleet-bus-51.jpg";
-import fleet52 from "@/assets/fleet-bus-52.jpg";
 import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
-import destAthens from "@/assets/destination-athens.jpg";
-import destMeteora from "@/assets/destination-meteora.jpg";
-
-const assetUrl = (path: string) => new URL(path, import.meta.url).href;
-
-const IVECO_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/iveco-${index + 1}.jpg`),
-);
-const TOURINO_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/tourino-${index + 1}.jpg`),
-);
-const NEOPLAN_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/neoplan-${index + 1}.jpg`),
-);
 
 const TIMELINE = [
   {
@@ -68,43 +52,6 @@ const TIMELINE = [
   },
 ];
 
-const FLEET_PREVIEW = [
-  {
-    img: fleet52,
-    type: "BUS",
-    seats: "52",
-    desc: "Neoplan πούλμαν 52 θέσεων — ιδανικό για σχολεία, συλλόγους και πολυήμερα ταξίδια.",
-    gallery: NEOPLAN_GALLERY,
-  },
-  {
-    img: fleet51,
-    type: "BUS",
-    seats: "51",
-    desc: "Setra premium coach 51 θέσεων — γερμανική πολυτέλεια για μεγάλα γκρουπ.",
-    gallery: NEOPLAN_GALLERY,
-  },
-  {
-    img: fleet35,
-    type: "BUS",
-    seats: "35",
-    desc: "Mercedes-Benz Turino — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
-    gallery: TOURINO_GALLERY,
-  },
-  {
-    img: fleet30,
-    type: "BUS",
-    seats: "30",
-    desc: "Iveco midibus 30 θέσεων — άνετο και αξιόπιστο για μεσαία γκρουπ.",
-    gallery: IVECO_GALLERY,
-  },
-  {
-    img: fleet26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρά γκρουπ και ορεινούς προορισμούς.",
-    gallery: IVECO_GALLERY,
-  },
-] as const;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -126,7 +73,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
-  const [openFleet, setOpenFleet] = useState<null | (typeof FLEET_PREVIEW)[number]>(null);
+  const [openFleet, setOpenFleet] = useState<FleetItem | null>(null);
   return (
     <PageShell>
       <section
@@ -319,7 +266,7 @@ function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {FLEET_PREVIEW.map((f, i) => (
+            {FLEET.map((f, i) => (
               <button
                 type="button"
                 key={f.seats}
@@ -359,7 +306,7 @@ function AboutPage() {
                     <span className="font-display text-[11px] tracking-[0.3em] text-muted-foreground">
                       ΛΕΠΤΟΜΕΡΕΙΕΣ
                     </span>
-                    <ArrowUpRight size={16} className="text-brand transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowRight size={16} className="text-brand transition-transform group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </button>
@@ -368,48 +315,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <Dialog open={!!openFleet} onOpenChange={(o) => !o && setOpenFleet(null)}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden">
-          {openFleet && (
-            <div>
-              <div>
-                <img
-                  src={openFleet.img}
-                  alt={`${openFleet.type} ${openFleet.seats} θέσεων`}
-                  className="w-full h-64 md:h-80 object-cover object-center"
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <DialogHeader>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <span className="inline-flex items-center px-3 py-1.5 border border-ink/15 font-display text-[11px] tracking-[0.25em] text-ink">
-                      {openFleet.type}
-                    </span>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-display text-4xl font-bold text-ink leading-none">
-                        {openFleet.seats}
-                      </span>
-                      <span className="font-display text-[11px] tracking-[0.25em] text-muted-foreground">
-                        ΘΕΣΕΙΣ
-                      </span>
-                    </div>
-                  </div>
-                  <DialogTitle className="font-display text-2xl md:text-3xl font-bold text-ink text-left">
-                    {openFleet.type} {openFleet.seats} θέσεων
-                  </DialogTitle>
-                  <DialogDescription className="text-base text-ink/75 leading-relaxed text-left pt-2">
-                    {openFleet.desc}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="mt-6 flex items-center gap-3 text-sm text-ink/70">
-                  <ArrowRight size={16} className="text-brand" />
-                  <span>Ζητήστε προσφορά για το όχημα αυτό από τη φόρμα επικοινωνίας.</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      <FleetDialog fleet={openFleet} onClose={() => setOpenFleet(null)} />
     </PageShell>
   );
 }

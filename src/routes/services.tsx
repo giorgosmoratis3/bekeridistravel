@@ -1,36 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  Users,
-  Snowflake,
-  Wifi,
-  ShieldCheck,
-  Briefcase,
-  Phone,
-  Gauge,
-  Sparkles,
-  Music2,
-} from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
 import { PageShell } from "@/components/page-shell";
+import { FleetDialog } from "@/components/fleet-dialog";
+import { FLEET, type FleetItem } from "@/data/fleet";
 import servicesBanner from "@/assets/services-banner.jpg";
 import serviceBus from "@/assets/service-bus.jpg";
 import serviceExcursions from "@/assets/service-excursions.jpg";
 import serviceTrips from "@/assets/service-trips.jpg";
-import fleetBus52 from "@/assets/fleet-bus-52.jpg";
-import fleetBus51 from "@/assets/fleet-bus-51.jpg";
-import fleetBus35 from "@/assets/fleet-bus-35.jpg";
-import fleetBus30 from "@/assets/fleet-bus-30.jpg";
-import fleetBus26 from "@/assets/fleet-bus-26.jpg";
-
-const PHONE_TEL = "+306977651811";
-const PHONE_LABEL = "6977 651 811";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -51,6 +27,7 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
+
 const SERVICES = [
   {
     img: serviceBus,
@@ -69,153 +46,6 @@ const SERVICES = [
   },
 ];
 
-type FleetItem = {
-  img: string;
-  type: string;
-  seats: string;
-  desc: string;
-  features: { icon: typeof Users; label: string }[];
-  details: string;
-  ideal: string[];
-  specs: { icon: typeof Users; label: string; value: string }[];
-};
-
-const FLEET: FleetItem[] = [
-  {
-    img: fleetBus52,
-    type: "BUS",
-    seats: "52",
-    desc: "Neoplan — πούλμαν μεγάλης χωρητικότητας 52 θέσεων, ιδανικό για σχολικές εκδρομές, συλλόγους και μεγάλα γκρουπ.",
-    features: [
-      { icon: Users, label: "52 θέσεις" },
-      { icon: Snowflake, label: "Κλιματισμός" },
-      { icon: Wifi, label: "Wi-Fi" },
-      { icon: Briefcase, label: "Μεγάλος χώρος αποσκευών" },
-      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
-    ],
-    details:
-      "Neoplan πολυτελές πούλμαν 52 θέσεων με ευρύχωρες, ανακλινόμενες θέσεις, διπλό κλιματισμό και πανοραμικά τζάμια. Ιδανικό για μεγάλα γκρουπ που ταξιδεύουν με άνεση σε μακρινούς προορισμούς.",
-    ideal: [
-      "Σχολικές εκδρομές",
-      "Πολυήμερα ταξίδια",
-      "Συλλογικές εκδηλώσεις",
-      "Αθλητικές αποστολές",
-    ],
-    specs: [
-      { icon: Users, label: "Θέσεις", value: "52" },
-      { icon: Briefcase, label: "Αποσκευές", value: "Μεγάλος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Neoplan Premium Coach" },
-      { icon: Music2, label: "Ψυχαγωγία", value: "Ηχοσύστημα · Μικρόφωνο" },
-    ],
-  },
-  {
-    img: fleetBus51,
-    type: "BUS",
-    seats: "51",
-    desc: "Setra — premium πούλμαν 51 θέσεων με κορυφαία γερμανική σχεδίαση, ιδανικό για μεγάλα γκρουπ και πολυήμερα ταξίδια.",
-    features: [
-      { icon: Users, label: "51 θέσεις" },
-      { icon: Snowflake, label: "Κλιματισμός" },
-      { icon: Wifi, label: "Wi-Fi" },
-      { icon: Briefcase, label: "Μεγάλος χώρος αποσκευών" },
-      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
-    ],
-    details:
-      "Setra premium coach 51 θέσεων — σύμβολο γερμανικής αξιοπιστίας και πολυτέλειας στις οδικές μεταφορές. Ανακλινόμενες θέσεις, διπλό κλιματισμό και πανοραμικά τζάμια για μέγιστη άνεση σε μακρινούς προορισμούς.",
-    ideal: [
-      "Σχολικές εκδρομές",
-      "Πολυήμερα ταξίδια",
-      "Συλλογικές εκδηλώσεις",
-      "Αθλητικές αποστολές",
-    ],
-    specs: [
-      { icon: Users, label: "Θέσεις", value: "51" },
-      { icon: Briefcase, label: "Αποσκευές", value: "Μεγάλος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Setra Premium Coach" },
-      { icon: Music2, label: "Ψυχαγωγία", value: "Ηχοσύστημα · Μικρόφωνο" },
-    ],
-  },
-  {
-    img: fleetBus35,
-    type: "BUS",
-    seats: "35",
-    desc: "Mercedes-Benz Turino — λεωφορείο μεσαίας χωρητικότητας, ευέλικτη επιλογή για εταιρικά event, αθλητικούς συλλόγους και ημερήσιες εκδρομές.",
-    features: [
-      { icon: Users, label: "35 θέσεις" },
-      { icon: Snowflake, label: "Κλιματισμός" },
-      { icon: Wifi, label: "Wi-Fi" },
-      { icon: Briefcase, label: "Άνετος χώρος αποσκευών" },
-      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
-    ],
-    details:
-      "Mercedes-Benz Turino 35 θέσεων με αναβαθμισμένη άνεση και ευελιξία. Συνδυάζει χωρητικότητα και ευκολία στην οδήγηση, ιδανικό για μεσαία γκρουπ και ημερήσιες αποδράσεις.",
-    ideal: [
-      "Εταιρικά event",
-      "Ημερήσιες εκδρομές",
-      "Αθλητικούς συλλόγους",
-      "Ιδιωτικές εκδηλώσεις",
-    ],
-    specs: [
-      { icon: Users, label: "Θέσεις", value: "35" },
-      { icon: Briefcase, label: "Αποσκευές", value: "Άνετος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Mercedes-Benz Turino" },
-      { icon: Sparkles, label: "Εξοπλισμός", value: "Wi-Fi · Κλιματισμός" },
-    ],
-  },
-  {
-    img: fleetBus30,
-    type: "BUS",
-    seats: "30",
-    desc: "Iveco — ευέλικτο midibus 30 θέσεων με κορυφαία άνεση και αξιοπιστία για μεσαία γκρουπ.",
-    features: [
-      { icon: Users, label: "30 θέσεις" },
-      { icon: Snowflake, label: "Κλιματισμός" },
-      { icon: Wifi, label: "Wi-Fi" },
-      { icon: Briefcase, label: "Άνετος χώρος αποσκευών" },
-      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
-    ],
-    details:
-      "Iveco 30 θέσεων — σύγχρονο midibus που συνδυάζει ιταλική σχεδίαση με υψηλή άνεση επιβατών. Ιδανική επιλογή για μεσαία γκρουπ, ημερήσιες εκδρομές και ταξίδια σε προορισμούς όπου χρειάζεται ευελιξία χωρίς συμβιβασμό στην ποιότητα.",
-    ideal: [
-      "Μεσαία γκρουπ",
-      "Ημερήσιες εκδρομές",
-      "Εταιρικές μετακινήσεις",
-      "Ιδιωτικές εκδηλώσεις",
-    ],
-    specs: [
-      { icon: Users, label: "Θέσεις", value: "30" },
-      { icon: Briefcase, label: "Αποσκευές", value: "Άνετος χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Iveco Midibus" },
-      { icon: Sparkles, label: "Εξοπλισμός", value: "Wi-Fi · Κλιματισμός" },
-    ],
-  },
-  {
-    img: fleetBus26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρότερα γκρουπ, ιδανικό σε στενούς δρόμους και ορεινούς προορισμούς.",
-    features: [
-      { icon: Users, label: "26 θέσεις" },
-      { icon: Snowflake, label: "Κλιματισμός" },
-      { icon: Briefcase, label: "Πρακτικός χώρος αποσκευών" },
-      { icon: ShieldCheck, label: "Ζώνες ασφαλείας" },
-    ],
-    details:
-      "Mercedes-Benz O 818 Teamstar — ένα κομψό και ευέλικτο μίνι λεωφορείο 26 θέσεων με γερμανική μηχανική αξιοπιστία. Φτάνει εκεί που τα μεγάλα πούλμαν δεν μπορούν, ιδανικό για ορεινές διαδρομές, στενά δρομάκια χωριών και μικρότερες παρέες που θέλουν προσωπική εξυπηρέτηση.",
-    ideal: [
-      "Ορεινούς προορισμούς",
-      "Παραδοσιακά χωριά",
-      "Μικρές παρέες",
-      "VIP μετακινήσεις",
-    ],
-    specs: [
-      { icon: Users, label: "Θέσεις", value: "26" },
-      { icon: Briefcase, label: "Αποσκευές", value: "Πρακτικός χώρος" },
-      { icon: Gauge, label: "Κατηγορία", value: "Mercedes-Benz O 818 Teamstar" },
-      { icon: Sparkles, label: "Εξοπλισμός", value: "Κλιματισμός" },
-    ],
-  },
-];
 
 function ServicesPage() {
   const [activeFleet, setActiveFleet] = useState<FleetItem | null>(null);
@@ -355,128 +185,7 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* FLEET DETAILS */}
-      <Dialog open={!!activeFleet} onOpenChange={(o) => !o && setActiveFleet(null)}>
-        <DialogContent className="max-w-sm sm:max-w-md p-0 overflow-hidden border border-ink/10 bg-white shadow-2xl rounded-2xl [&>button]:hidden">
-          {activeFleet && (
-            <div className="relative max-h-[85vh] flex flex-col">
-              {/* Close */}
-              <button
-                type="button"
-                onClick={() => setActiveFleet(null)}
-                aria-label="Κλείσιμο"
-                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full border border-ink/15 bg-white text-ink/70 hover:bg-ink hover:text-white transition-all flex items-center justify-center"
-              >
-                <span className="text-base leading-none">×</span>
-              </button>
-
-              <div className="p-5 sm:p-6 overflow-y-auto">
-                <DialogHeader className="sr-only">
-                  <DialogTitle>
-                    {activeFleet.type} {activeFleet.seats} θέσεων
-                  </DialogTitle>
-                  <DialogDescription>{activeFleet.details}</DialogDescription>
-                </DialogHeader>
-
-                {/* Hero image */}
-                <div className="relative h-36 sm:h-44 overflow-hidden rounded-xl border border-ink/10 bg-ink/5">
-                  <img
-                    src={activeFleet.img}
-                    alt={`${activeFleet.type} ${activeFleet.seats} θέσεων`}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-brand font-display text-[9px] tracking-[0.25em] text-brand-foreground">
-                    {activeFleet.type}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <div className="mt-4 flex items-end justify-between gap-3">
-                  <div>
-                    <div className="font-display text-[9px] tracking-[0.3em] text-brand">
-                      ΧΩΡΗΤΙΚΟΤΗΤΑ
-                    </div>
-                    <h3 className="mt-1 font-display font-bold text-ink text-xl sm:text-2xl tracking-tight">
-                      {activeFleet.seats} θέσεων
-                    </h3>
-                  </div>
-                  <span className="font-display text-4xl sm:text-5xl font-bold text-ink/10 leading-none">
-                    {activeFleet.seats}
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="mt-3 text-ink/75 leading-relaxed text-[13px]">
-                  {activeFleet.details}
-                </p>
-
-                {/* Specs */}
-                <div className="mt-4 grid grid-cols-2 gap-1.5">
-                  {activeFleet.specs.map(({ icon: Icon, label, value }) => (
-                    <div
-                      key={label}
-                      className="rounded-lg border border-ink/10 bg-ink/[0.03] p-2.5"
-                    >
-                      <div className="flex items-center gap-1.5 text-ink/55 text-[8px] tracking-[0.2em] font-display uppercase">
-                        <Icon size={10} strokeWidth={1.8} />
-                        {label}
-                      </div>
-                      <div className="mt-0.5 text-ink text-[12px] font-medium">
-                        {value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Features */}
-                <div className="mt-4">
-                  <div className="font-display text-[9px] tracking-[0.3em] text-brand mb-2">
-                    ΕΞΟΠΛΙΣΜΟΣ
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeFleet.features.map(({ icon: Icon, label }) => (
-                      <span
-                        key={label}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-ink/15 bg-white text-[10px] text-ink/80"
-                      >
-                        <Icon size={11} strokeWidth={1.8} />
-                        {label}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Ideal for */}
-                <div className="mt-4">
-                  <div className="font-display text-[9px] tracking-[0.3em] text-brand mb-2">
-                    ΙΔΑΝΙΚΟ ΓΙΑ
-                  </div>
-                  <ul className="grid grid-cols-2 gap-y-1 gap-x-3 text-ink/80 text-[12px]">
-                    {activeFleet.ideal.map((it) => (
-                      <li key={it} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-brand" />
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Divider */}
-                <div className="mt-4 h-px w-full bg-ink/10" />
-
-                {/* CTA */}
-                <a
-                  href={`tel:${PHONE_TEL}`}
-                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand text-brand-foreground font-display text-[10px] tracking-[0.3em] hover:bg-ink transition-all"
-                >
-                  <Phone size={12} strokeWidth={2} />
-                  {PHONE_LABEL}
-                </a>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      <FleetDialog fleet={activeFleet} onClose={() => setActiveFleet(null)} />
     </PageShell>
   );
 }
