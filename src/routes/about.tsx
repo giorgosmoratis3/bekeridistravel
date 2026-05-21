@@ -154,14 +154,13 @@ function AboutPage() {
           <div className="mission-image-wrap reveal-left">
             <div className="mission-image-frame">
               <img
-                src={aboutMission}
-                alt="Ταξιδιώτες επιβιβάζονται σε λεωφορείο της Bekeridis Travel"
+                src={fleet52}
+                alt="Neoplan πούλμαν 52 θέσεων — Bekeridis Travel"
                 width={1024}
                 height={768}
                 loading="lazy"
                 className="mission-image w-full h-auto rounded-sm shadow-soft"
               />
-              
             </div>
           </div>
           <div className="mission-text reveal-right">
