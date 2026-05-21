@@ -319,7 +319,7 @@ function ServicesPage() {
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="w-full h-48 md:h-52 object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6 md:p-7 flex flex-col flex-1">
