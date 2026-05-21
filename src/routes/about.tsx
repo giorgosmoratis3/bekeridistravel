@@ -13,6 +13,7 @@ import fleet30 from "@/assets/fleet-bus-30.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
 import fleet51 from "@/assets/fleet-bus-51.jpg";
 import fleet52 from "@/assets/fleet-bus-52.jpg";
+import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
 import destMeteora from "@/assets/destination-meteora.jpg";
 
@@ -154,8 +155,8 @@ function AboutPage() {
           <div className="mission-image-wrap reveal-left">
             <div className="mission-image-frame">
               <img
-                src={fleet52}
-                alt="Neoplan πούλμαν 52 θέσεων — Bekeridis Travel"
+                src={missionNeoplan}
+                alt="Neoplan πούλμαν Bekeridis Travel σε εκδρομή στην ελληνική ακτή"
                 width={1024}
                 height={768}
                 loading="lazy"
