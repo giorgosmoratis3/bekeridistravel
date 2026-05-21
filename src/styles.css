@@ -209,7 +209,7 @@
     }
     .js-grow-bar {
       width: 0 !important;
-      transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
     }
     .group.scroll-active .js-grow-bar,
     .service-reveal.is-visible .js-grow-bar,
@@ -220,6 +220,13 @@
     .service-reveal.is-visible .mobile-show {
       opacity: 1 !important;
       transform: translateY(0) !important;
+      transition: opacity 0.8s ease-out 0.3s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s !important;
+    }
+    /* Rotate the arrow icon on mobile once visible (mirrors desktop hover) */
+    .service-reveal.is-visible .mobile-show .rotate-arrow,
+    .service-reveal.is-visible .mobile-show span[class*="-rotate-12"] {
+      transform: rotate(0deg) !important;
+      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s !important;
     }
   }
 
