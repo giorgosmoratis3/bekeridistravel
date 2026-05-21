@@ -1,23 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CountUp } from "@/components/count-up";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { FleetDialog } from "@/components/fleet-dialog";
+import { FLEET, type FleetItem } from "@/data/fleet";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutHistory2003 from "@/assets/about-history-2003.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
-import fleet30 from "@/assets/fleet-bus-30.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
-import fleet51 from "@/assets/fleet-bus-51.jpg";
-import fleet52 from "@/assets/fleet-bus-52.jpg";
 import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
-import destAthens from "@/assets/destination-athens.jpg";
-import destMeteora from "@/assets/destination-meteora.jpg";
 
-const assetUrl = (path: string) => new URL(path, import.meta.url).href;
 
 const IVECO_GALLERY = Array.from({ length: 12 }, (_, index) =>
   assetUrl(`../assets/gallery/iveco-${index + 1}.jpg`),
