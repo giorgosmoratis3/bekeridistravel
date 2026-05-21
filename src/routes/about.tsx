@@ -266,7 +266,7 @@ function AboutPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {FLEET_PREVIEW.map((f, i) => (
+            {FLEET.map((f, i) => (
               <button
                 type="button"
                 key={f.seats}
@@ -306,7 +306,7 @@ function AboutPage() {
                     <span className="font-display text-[11px] tracking-[0.3em] text-muted-foreground">
                       ΛΕΠΤΟΜΕΡΕΙΕΣ
                     </span>
-                    <ArrowUpRight size={16} className="text-brand transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowRight size={16} className="text-brand transition-transform group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </button>
@@ -315,48 +315,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <Dialog open={!!openFleet} onOpenChange={(o) => !o && setOpenFleet(null)}>
-        <DialogContent className="max-w-2xl p-0 overflow-hidden">
-          {openFleet && (
-            <div>
-              <div>
-                <img
-                  src={openFleet.img}
-                  alt={`${openFleet.type} ${openFleet.seats} θέσεων`}
-                  className="w-full h-64 md:h-80 object-cover object-center"
-                />
-              </div>
-              <div className="p-6 md:p-8">
-                <DialogHeader>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <span className="inline-flex items-center px-3 py-1.5 border border-ink/15 font-display text-[11px] tracking-[0.25em] text-ink">
-                      {openFleet.type}
-                    </span>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="font-display text-4xl font-bold text-ink leading-none">
-                        {openFleet.seats}
-                      </span>
-                      <span className="font-display text-[11px] tracking-[0.25em] text-muted-foreground">
-                        ΘΕΣΕΙΣ
-                      </span>
-                    </div>
-                  </div>
-                  <DialogTitle className="font-display text-2xl md:text-3xl font-bold text-ink text-left">
-                    {openFleet.type} {openFleet.seats} θέσεων
-                  </DialogTitle>
-                  <DialogDescription className="text-base text-ink/75 leading-relaxed text-left pt-2">
-                    {openFleet.desc}
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="mt-6 flex items-center gap-3 text-sm text-ink/70">
-                  <ArrowRight size={16} className="text-brand" />
-                  <span>Ζητήστε προσφορά για το όχημα αυτό από τη φόρμα επικοινωνίας.</span>
-                </div>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
+      <FleetDialog fleet={openFleet} onClose={() => setOpenFleet(null)} />
     </PageShell>
   );
 }
