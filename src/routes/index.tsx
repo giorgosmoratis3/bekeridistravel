@@ -416,7 +416,7 @@ function HomePage() {
                             ? "ΔΕΙΤΕ ΤΟΝ ΣΤΟΛΟ"
                             : "ΔΕΙΤΕ ΠΕΡΙΣΣΟΤΕΡΑ"}
                         </span>
-                        <span className="flex items-center justify-center w-9 h-9 bg-brand text-brand-foreground transition-transform group-hover:rotate-0 -rotate-12">
+                        <span className="rotate-arrow flex items-center justify-center w-9 h-9 bg-brand text-brand-foreground transition-transform group-hover:rotate-0 -rotate-12">
                           <ArrowUpRight size={16} strokeWidth={2.2} />
                         </span>
                       </div>
