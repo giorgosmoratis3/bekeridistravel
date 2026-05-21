@@ -265,8 +265,8 @@ function AboutPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {FLEET.map((f, i) => (
+          {(() => {
+            const renderCard = (f: FleetItem, i: number) => (
               <button
                 type="button"
                 key={f.seats}
@@ -310,8 +310,20 @@ function AboutPage() {
                   </div>
                 </div>
               </button>
-            ))}
-          </div>
+            );
+            const top = FLEET.slice(0, 3);
+            const bottom = FLEET.slice(3);
+            return (
+              <div className="space-y-6 md:space-y-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {top.map((f, i) => renderCard(f, i))}
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 lg:max-w-[66.6667%] lg:mx-auto">
+                  {bottom.map((f, i) => renderCard(f, i + 3))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </section>
 
