@@ -11,6 +11,7 @@ import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet30 from "@/assets/fleet-bus-30.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
+import fleet51 from "@/assets/fleet-bus-51.jpg";
 import fleet52 from "@/assets/fleet-bus-52.jpg";
 import destAthens from "@/assets/destination-athens.jpg";
 import destMeteora from "@/assets/destination-meteora.jpg";
@@ -68,32 +69,39 @@ const TIMELINE = [
 
 const FLEET_PREVIEW = [
   {
-    img: fleet52,
-    type: "BUS",
-    seats: "52",
-    desc: "Πούλμαν μεγάλης χωρητικότητας για σχολεία, συλλόγους και μεγάλα γκρουπ.",
-    gallery: NEOPLAN_GALLERY,
-  },
-  {
-    img: fleet35,
-    type: "BUS",
-    seats: "35",
-    desc: "Ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
-    gallery: TOURINO_GALLERY,
+    img: fleet26,
+    type: "MINI BUS",
+    seats: "26",
+    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρά γκρουπ και ορεινούς προορισμούς.",
+    gallery: IVECO_GALLERY,
   },
   {
     img: fleet30,
     type: "BUS",
     seats: "30",
-    desc: "Mercedes-Benz 818 Jetliner / Auwärter — άνετο midibus 30 θέσεων.",
+    desc: "Iveco midibus 30 θέσεων — άνετο και αξιόπιστο για μεσαία γκρουπ.",
     gallery: TOURINO_GALLERY,
   },
   {
-    img: fleet26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "IVECO mini bus για μικρότερα γκρουπ και ορεινούς προορισμούς.",
-    gallery: IVECO_GALLERY,
+    img: fleet35,
+    type: "BUS",
+    seats: "35",
+    desc: "Mercedes-Benz Turino — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
+    gallery: TOURINO_GALLERY,
+  },
+  {
+    img: fleet51,
+    type: "BUS",
+    seats: "51",
+    desc: "Setra premium coach 51 θέσεων — γερμανική πολυτέλεια για μεγάλα γκρουπ.",
+    gallery: NEOPLAN_GALLERY,
+  },
+  {
+    img: fleet52,
+    type: "BUS",
+    seats: "52",
+    desc: "Neoplan πούλμαν 52 θέσεων — ιδανικό για σχολεία, συλλόγους και πολυήμερα ταξίδια.",
+    gallery: NEOPLAN_GALLERY,
   },
 ] as const;
 

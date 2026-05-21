@@ -303,7 +303,7 @@ function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             {FLEET.map((f, i) => (
               <button
                 key={f.seats}
@@ -319,7 +319,7 @@ function ServicesPage() {
                     width={1024}
                     height={640}
                     loading="lazy"
-                    className="w-full h-48 md:h-52 object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 md:h-80 object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-6 md:p-7 flex flex-col flex-1">
