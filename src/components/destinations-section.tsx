@@ -47,7 +47,7 @@ export function DestinationsSection() {
                 <div className="font-display font-bold text-lg md:text-2xl text-white mt-1">
                   {d.name}
                 </div>
-                <div className="mt-3 h-[2px] w-0 bg-brand transition-all duration-500 group-hover:w-full" />
+                <div className="js-grow-bar mt-3 h-[2px] w-0 bg-brand transition-all duration-500 group-hover:w-full" />
               </div>
             </article>
           ))}
