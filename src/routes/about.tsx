@@ -69,25 +69,11 @@ const TIMELINE = [
 
 const FLEET_PREVIEW = [
   {
-    img: fleet26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρά γκρουπ και ορεινούς προορισμούς.",
-    gallery: IVECO_GALLERY,
-  },
-  {
-    img: fleet30,
+    img: fleet52,
     type: "BUS",
-    seats: "30",
-    desc: "Iveco midibus 30 θέσεων — άνετο και αξιόπιστο για μεσαία γκρουπ.",
-    gallery: TOURINO_GALLERY,
-  },
-  {
-    img: fleet35,
-    type: "BUS",
-    seats: "35",
-    desc: "Mercedes-Benz Turino — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
-    gallery: TOURINO_GALLERY,
+    seats: "52",
+    desc: "Neoplan πούλμαν 52 θέσεων — ιδανικό για σχολεία, συλλόγους και πολυήμερα ταξίδια.",
+    gallery: NEOPLAN_GALLERY,
   },
   {
     img: fleet51,
@@ -97,11 +83,25 @@ const FLEET_PREVIEW = [
     gallery: NEOPLAN_GALLERY,
   },
   {
-    img: fleet52,
+    img: fleet35,
     type: "BUS",
-    seats: "52",
-    desc: "Neoplan πούλμαν 52 θέσεων — ιδανικό για σχολεία, συλλόγους και πολυήμερα ταξίδια.",
-    gallery: NEOPLAN_GALLERY,
+    seats: "35",
+    desc: "Mercedes-Benz Turino — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
+    gallery: TOURINO_GALLERY,
+  },
+  {
+    img: fleet30,
+    type: "BUS",
+    seats: "30",
+    desc: "Iveco midibus 30 θέσεων — άνετο και αξιόπιστο για μεσαία γκρουπ.",
+    gallery: IVECO_GALLERY,
+  },
+  {
+    img: fleet26,
+    type: "MINI BUS",
+    seats: "26",
+    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρά γκρουπ και ορεινούς προορισμούς.",
+    gallery: IVECO_GALLERY,
   },
 ] as const;
 
