@@ -40,7 +40,7 @@ export function useReveal() {
 
     let groupObserver: IntersectionObserver | null = null;
     if (isTouch) {
-      const targets = document.querySelectorAll<HTMLElement>(".group, .hover-bar");
+      const targets = document.querySelectorAll<HTMLElement>(".group, .hover-bar, .service-reveal");
       groupObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
