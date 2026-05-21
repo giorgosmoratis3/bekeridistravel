@@ -211,26 +211,26 @@
       width: 0 !important;
       transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
     }
-    .group.scroll-active .js-grow-bar,
-    .service-reveal.is-visible .js-grow-bar,
-    .is-visible .js-grow-bar {
+    .group.scroll-active .js-grow-bar {
       width: 100% !important;
     }
     /* Reveal hover CTA overlay on mobile once the card scrolls into view */
-    .service-reveal.is-visible .mobile-show {
+    .service-reveal .mobile-show {
+      opacity: 0 !important;
+      transform: translateY(22px) !important;
+      transition: opacity 0.8s ease-out 0.15s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s !important;
+    }
+    .service-reveal.scroll-active .mobile-show {
       opacity: 1 !important;
       transform: translateY(0) !important;
-      transition: opacity 0.8s ease-out 0.3s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s !important;
     }
     /* Rotate the arrow icon on mobile once visible (mirrors desktop hover) */
-    .service-reveal.is-visible .mobile-show .rotate-arrow,
-    .service-reveal.is-visible .mobile-show span[class*="-rotate-12"] {
+    .service-reveal .service-cta-arrow {
+      rotate: -12deg !important;
+      transition: rotate 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s !important;
+    }
+    .service-reveal.scroll-active .service-cta-arrow {
       rotate: 0deg !important;
-      transform: rotate(0deg) !important;
-      transition-property: rotate, transform !important;
-      transition-duration: 0.9s !important;
-      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
-      transition-delay: 0.5s !important;
     }
   }
 
@@ -287,6 +287,15 @@
   }
   .service-reveal .service-img-wrap:hover img {
     transform: scale(1.06);
+  }
+
+  .service-cta-arrow {
+    rotate: -12deg;
+    transition: rotate 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .group:hover .service-cta-arrow {
+    rotate: 0deg;
   }
 
   .service-reveal .service-text > * {
