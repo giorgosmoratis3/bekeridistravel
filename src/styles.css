@@ -206,7 +206,11 @@
     .hover-bar.scroll-active::after {
       transform: scaleX(1);
     }
+    .group.scroll-active .js-grow-bar {
+      width: 100% !important;
+    }
   }
+
 
   /* Subtle floating clouds */
   @keyframes float-slow {

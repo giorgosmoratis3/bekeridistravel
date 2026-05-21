@@ -267,7 +267,7 @@ function HomePage() {
                           <div className="mt-1 font-display text-[9px] tracking-[0.2em] text-white/70">
                             {t.tag}
                           </div>
-                          <div className="mt-1.5 h-[2px] w-6 bg-brand transition-all duration-500 group-hover:w-full" />
+                          <div className="js-grow-bar mt-1.5 h-[2px] w-6 bg-brand transition-all duration-500 group-hover:w-full" />
                         </div>
                       </button>
                     ))}
@@ -429,7 +429,7 @@ function HomePage() {
                     <p className="mt-2 md:mt-3 text-ink/70 leading-relaxed text-sm md:text-base">
                       {s.desc}
                     </p>
-                    <div className="mt-4 h-[2px] w-12 bg-brand transition-all duration-500 group-hover:w-full" />
+                    <div className="js-grow-bar mt-4 h-[2px] w-12 bg-brand transition-all duration-500 group-hover:w-full" />
                   </div>
                 </Link>
               );
