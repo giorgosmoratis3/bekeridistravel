@@ -13,17 +13,6 @@ import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
 import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
 
-
-const IVECO_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/iveco-${index + 1}.jpg`),
-);
-const TOURINO_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/tourino-${index + 1}.jpg`),
-);
-const NEOPLAN_GALLERY = Array.from({ length: 12 }, (_, index) =>
-  assetUrl(`../assets/gallery/neoplan-${index + 1}.jpg`),
-);
-
 const TIMELINE = [
   {
     year: "2003",
@@ -63,43 +52,6 @@ const TIMELINE = [
   },
 ];
 
-const FLEET_PREVIEW = [
-  {
-    img: fleet52,
-    type: "BUS",
-    seats: "52",
-    desc: "Neoplan πούλμαν 52 θέσεων — ιδανικό για σχολεία, συλλόγους και πολυήμερα ταξίδια.",
-    gallery: NEOPLAN_GALLERY,
-  },
-  {
-    img: fleet51,
-    type: "BUS",
-    seats: "51",
-    desc: "Setra premium coach 51 θέσεων — γερμανική πολυτέλεια για μεγάλα γκρουπ.",
-    gallery: NEOPLAN_GALLERY,
-  },
-  {
-    img: fleet35,
-    type: "BUS",
-    seats: "35",
-    desc: "Mercedes-Benz Turino — ευέλικτη επιλογή για εταιρικά event και ημερήσιες εκδρομές.",
-    gallery: TOURINO_GALLERY,
-  },
-  {
-    img: fleet30,
-    type: "BUS",
-    seats: "30",
-    desc: "Iveco midibus 30 θέσεων — άνετο και αξιόπιστο για μεσαία γκρουπ.",
-    gallery: IVECO_GALLERY,
-  },
-  {
-    img: fleet26,
-    type: "MINI BUS",
-    seats: "26",
-    desc: "Mercedes-Benz O 818 — ευέλικτο μίνι λεωφορείο για μικρά γκρουπ και ορεινούς προορισμούς.",
-    gallery: IVECO_GALLERY,
-  },
-] as const;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
