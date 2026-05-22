@@ -38,8 +38,8 @@ export const Route = createRootRoute({
       { name: "description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
       { property: "og:description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
       { name: "twitter:description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b589672c-d419-480a-b1f2-47bd90dc45e4/id-preview-68f77eba--7d0604fb-90ad-47d1-b74f-d7a70ecaf528.lovable.app-1777339098695.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b589672c-d419-480a-b1f2-47bd90dc45e4/id-preview-68f77eba--7d0604fb-90ad-47d1-b74f-d7a70ecaf528.lovable.app-1777339098695.png" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d55f1f2-d3c2-46b5-ab86-d813c39c98e0" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d55f1f2-d3c2-46b5-ab86-d813c39c98e0" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
