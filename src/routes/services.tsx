@@ -134,13 +134,63 @@ function ServicesPage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {FLEET.map((f, i) => (
+            {FLEET.slice(0, 3).map((f, i) => (
               <button
                 key={f.seats}
                 type="button"
                 onClick={() => setActiveFleet(f)}
                 className="reveal group fleet-card text-left flex flex-col overflow-hidden"
                 style={{ transitionDelay: `${i * 120}ms` }}
+              >
+                <div className="relative overflow-hidden bg-[hsl(var(--muted))]">
+                  <img
+                    src={f.img}
+                    alt={`${f.type} ${f.seats} θέσεων`}
+                    width={1024}
+                    height={640}
+                    loading="lazy"
+                    className="w-full h-64 md:h-80 object-contain object-center p-4 transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 md:p-7 flex flex-col flex-1">
+                  <div className="flex items-baseline justify-between mb-3">
+                    <span className="inline-flex items-center px-2.5 py-1 border border-ink/15 bg-white/60 backdrop-blur font-display text-[10px] tracking-[0.25em] text-ink">
+                      {f.type}
+                    </span>
+                    <div className="flex items-baseline gap-1">
+                      <span className="font-display text-4xl md:text-5xl font-bold text-ink leading-none">
+                        {f.seats}
+                      </span>
+                      <span className="font-display text-[10px] tracking-[0.25em] text-muted-foreground">
+                        ΘΕΣΕΙΣ
+                      </span>
+                    </div>
+                  </div>
+                  <div className="h-px w-full bg-ink/10 mb-4" />
+                  <p className="text-sm text-ink/75 leading-relaxed mb-5">
+                    {f.desc}
+                  </p>
+                  <div className="mt-auto pt-4 border-t border-ink/10 flex items-center justify-between">
+                    <span className="font-display text-[10px] tracking-[0.3em] text-muted-foreground">
+                      ΛΕΠΤΟΜΕΡΕΙΕΣ
+                    </span>
+                    <span className="font-display text-[10px] tracking-[0.3em] text-brand transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-5 md:gap-6 mt-5 md:mt-6 lg:max-w-[66.6667%] lg:mx-auto">
+            {FLEET.slice(3).map((f, i) => (
+              <button
+                key={f.seats}
+                type="button"
+                onClick={() => setActiveFleet(f)}
+                className="reveal group fleet-card text-left flex flex-col overflow-hidden"
+                style={{ transitionDelay: `${(i + 3) * 120}ms` }}
               >
                 <div className="relative overflow-hidden bg-[hsl(var(--muted))]">
                   <img
