@@ -12,8 +12,6 @@ import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
 import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
-import neoplanDomokos from "@/assets/about-neoplan-domokos.jpg";
-import castleDomokos from "@/assets/about-castle-domokos.jpg";
 
 const TIMELINE = [
   {
@@ -226,53 +224,7 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Domokos showcase */}
-      <section className="py-20 md:py-28 px-5 sm:px-6 bg-white">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12 md:mb-16 reveal">
-            <p className="font-display text-xs tracking-[0.4em] text-brand mb-3">
-              Ο ΤΟΠΟΣ ΜΑΣ
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-ink tracking-wide">
-              ΜΕ ΑΦΕΤΗΡΙΑ ΤΟΝ ΔΟΜΟΚΟ
-            </h2>
-            <div className="mx-auto mt-4 h-[2px] w-14 bg-brand" />
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <figure className="reveal group relative overflow-hidden rounded-sm shadow-soft">
-              <img
-                src={neoplanDomokos}
-                alt="Πούλμαν Neoplan της Bekeridis Travel με θέα τον Δομοκό"
-                width={1920}
-                height={1080}
-                loading="lazy"
-                className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 md:p-6">
-                <p className="font-display text-[10px] tracking-[0.35em] text-brand mb-1">ΣΤΟΛΟΣ</p>
-                <p className="font-display text-lg md:text-xl text-white">Neoplan με θέα τον Δομοκό</p>
-              </figcaption>
-            </figure>
-            <figure className="reveal group relative overflow-hidden rounded-sm shadow-soft" style={{ transitionDelay: "120ms" }}>
-              <img
-                src={castleDomokos}
-                alt="Λεωφορείο Bekeridis Travel μπροστά στο κάστρο του Δομοκού"
-                width={1920}
-                height={1080}
-                loading="lazy"
-                className="w-full h-72 md:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-5 md:p-6">
-                <p className="font-display text-[10px] tracking-[0.35em] text-brand mb-1">ΙΣΤΟΡΙΑ</p>
-                <p className="font-display text-lg md:text-xl text-white">Το κάστρο του Δομοκού</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 px-6 bg-white">
-
         <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-10">
           {[
             { n: 20, suffix: "+", t: "Χρόνια Εμπειρίας", d: "στον τουριστικό κλάδο" },
