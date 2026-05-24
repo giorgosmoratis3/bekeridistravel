@@ -2,79 +2,23 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
-import { useLang, useT } from "@/lib/i18n";
+
+const NAV = [
+  { to: "/", label: "ΑΡΧΙΚΗ", hash: undefined },
+  { to: "/about", label: "Η ΕΤΑΙΡΕΙΑ ΜΑΣ", hash: undefined },
+  { to: "/services", label: "ΥΠΗΡΕΣΙΕΣ", hash: undefined },
+  { to: "/excursions", label: "ΕΚΔΡΟΜΕΣ", hash: undefined },
+  { to: "/", label: "ΑΞΙΟΛΟΓΗΣΕΙΣ", hash: "reviews" },
+  { to: "/contact", label: "ΕΠΙΚΟΙΝΩΝΙΑ", hash: undefined },
+] as const;
 
 const PHONE = "+306977651811";
 const PHONE_DISPLAY = "6977 651 811";
-
-function FlagButton({
-  code,
-  active,
-  onClick,
-  light,
-}: {
-  code: "el" | "en";
-  active: boolean;
-  onClick: () => void;
-  light: boolean;
-}) {
-  const label = code === "el" ? "Ελληνικά" : "English";
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={label}
-      aria-pressed={active}
-      className={`relative inline-flex items-center justify-center w-7 h-5 rounded-[3px] overflow-hidden transition-all ${
-        active
-          ? "ring-2 ring-brand scale-105"
-          : light
-            ? "ring-1 ring-white/40 opacity-70 hover:opacity-100"
-            : "ring-1 ring-ink/20 opacity-70 hover:opacity-100"
-      }`}
-    >
-      {code === "el" ? (
-        // Greek flag (simplified)
-        <svg viewBox="0 0 27 18" className="w-full h-full" aria-hidden="true">
-          <rect width="27" height="18" fill="#fff" />
-          <rect y="0" width="27" height="2" fill="#0d5eaf" />
-          <rect y="4" width="27" height="2" fill="#0d5eaf" />
-          <rect y="8" width="27" height="2" fill="#0d5eaf" />
-          <rect y="12" width="27" height="2" fill="#0d5eaf" />
-          <rect y="16" width="27" height="2" fill="#0d5eaf" />
-          <rect width="10" height="10" fill="#0d5eaf" />
-          <rect x="4" y="0" width="2" height="10" fill="#fff" />
-          <rect x="0" y="4" width="10" height="2" fill="#fff" />
-        </svg>
-      ) : (
-        // UK flag (simplified Union Jack)
-        <svg viewBox="0 0 60 30" className="w-full h-full" aria-hidden="true">
-          <rect width="60" height="30" fill="#012169" />
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
-          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="3" />
-          <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
-          <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="5" />
-        </svg>
-      )}
-    </button>
-  );
-}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const t = useT();
-  const { lang, setLang } = useLang();
-
-  const NAV = [
-    { to: "/", label: t("ΑΡΧΙΚΗ", "HOME"), hash: undefined as string | undefined },
-    { to: "/about", label: t("Η ΕΤΑΙΡΕΙΑ ΜΑΣ", "ABOUT US"), hash: undefined },
-    { to: "/services", label: t("ΥΠΗΡΕΣΙΕΣ", "SERVICES"), hash: undefined },
-    { to: "/excursions", label: t("ΕΚΔΡΟΜΕΣ", "EXCURSIONS"), hash: undefined },
-    { to: "/", label: t("ΑΞΙΟΛΟΓΗΣΕΙΣ", "REVIEWS"), hash: "reviews" },
-    { to: "/contact", label: t("ΕΠΙΚΟΙΝΩΝΙΑ", "CONTACT"), hash: undefined },
-  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -87,8 +31,10 @@ export function SiteHeader() {
     setOpen(false);
   }, [location.pathname]);
 
+  // `open` can only become true via the burger button (md:hidden), so it only affects mobile/tablet.
+  // When the menu is open we use a Liquid Glass effect (semi-transparent dark/grey + heavy blur).
+  // When scrolled (any breakpoint), we use the solid white background.
   const solid = scrolled || open;
-  const lightFlags = !scrolled && !open;
 
   return (
     <header
@@ -127,7 +73,7 @@ export function SiteHeader() {
             </div>
           </Link>
 
-          {/* Nav */}
+          {/* Nav (centered, takes remaining space) */}
           <nav className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-6 xl:gap-8 min-w-0">
             {NAV.map((item) => {
               const currentHash = location.hash.replace("#", "") || undefined;
@@ -154,24 +100,18 @@ export function SiteHeader() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2 shrink-0">
-            <div className="hidden sm:flex flex-col items-end gap-1.5">
-              <a
-                href={`tel:${PHONE}`}
-                className={`inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
-                  scrolled
-                    ? "bg-brand text-brand-foreground hover:bg-brand/90"
-                    : "bg-white text-ink hover:bg-brand hover:text-brand-foreground"
-                }`}
-              >
-                <Phone size={14} />
-                <span className="hidden lg:inline">{t("ΚΑΛΕΣΤΕ ΜΑΣ", "CALL US")}</span>
-                <span className="lg:hidden">{PHONE_DISPLAY}</span>
-              </a>
-              <div className="flex items-center gap-1.5">
-                <FlagButton code="el" active={lang === "el"} onClick={() => setLang("el")} light={lightFlags} />
-                <FlagButton code="en" active={lang === "en"} onClick={() => setLang("en")} light={lightFlags} />
-              </div>
-            </div>
+            <a
+              href={`tel:${PHONE}`}
+              className={`hidden sm:inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
+                scrolled
+                  ? "bg-brand text-brand-foreground hover:bg-brand/90"
+                  : "bg-white text-ink hover:bg-brand hover:text-brand-foreground"
+              }`}
+            >
+              <Phone size={14} />
+              <span className="hidden lg:inline">ΚΑΛΕΣΤΕ ΜΑΣ</span>
+              <span className="lg:hidden">{PHONE_DISPLAY}</span>
+            </a>
 
             <button
               onClick={() => setOpen((v) => !v)}
@@ -211,10 +151,6 @@ export function SiteHeader() {
               >
                 <Phone size={14} /> {PHONE_DISPLAY}
               </a>
-              <div className="mt-3 flex items-center justify-center gap-3">
-                <FlagButton code="el" active={lang === "el"} onClick={() => setLang("el")} light={true} />
-                <FlagButton code="en" active={lang === "en"} onClick={() => setLang("en")} light={true} />
-              </div>
             </nav>
           </div>
         )}
