@@ -19,8 +19,8 @@ const OFFICES: Office[] = [
     mobile: { label: "6977 651 811", tel: "+306977651811" },
     email: "bekeridistravel@yahoo.gr",
     hours: "Δευ – Σάβ: 08:00 – 14:00 & 17:00 – 20:00 · Κυριακή: Κλειστά",
-    mapQuery: "Κεντρική+Πλατεία+Δομοκού",
-    mapsLink: "https://www.google.com/maps/search/?api=1&query=Κεντρική+Πλατεία+Δομοκού",
+    mapQuery: "39.1297320,22.3035710(Κεντρική+Πλατεία+Δομοκού)",
+    mapsLink: "https://www.google.com/maps/search/?api=1&query=39.1297320,22.3035710",
   },
   {
     title: "ΥΠΟΚΑΤΑΣΤΗΜΑ ΛΑΜΙΑΣ",
