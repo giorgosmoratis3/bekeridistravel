@@ -12,6 +12,8 @@ import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
 import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
+import neoplanDomokos from "@/assets/about-neoplan-domokos.jpg";
+import castleDomokos from "@/assets/about-castle-domokos.jpg";
 
 const TIMELINE = [
   {
