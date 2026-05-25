@@ -10,6 +10,15 @@ export const Route = createFileRoute("/participation-terms")({
         content:
           "Όροι συμμετοχής στις οργανωμένες εκδρομές της Bekeridis Travel.",
       },
+      { property: "og:title", content: "Όροι Συμμετοχής — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Τι ισχύει για τη συμμετοχή σας στις οργανωμένες εκδρομές μας.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/participation-terms" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/participation-terms" },
     ],
   }),
   component: () => (
