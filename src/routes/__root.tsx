@@ -52,6 +52,30 @@ export const Route = createRootRoute({
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://bekeridistravel.lovable.app/#organization",
+              name: "Bekeridis Travel",
+              url: "https://bekeridistravel.lovable.app",
+              logo: "https://bekeridistravel.lovable.app/favicon.png",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://bekeridistravel.lovable.app/#website",
+              url: "https://bekeridistravel.lovable.app",
+              name: "Bekeridis Travel",
+              publisher: { "@id": "https://bekeridistravel.lovable.app/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

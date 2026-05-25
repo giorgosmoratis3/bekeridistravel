@@ -10,6 +10,15 @@ export const Route = createFileRoute("/refund-policy")({
         content:
           "Πολιτική ακυρώσεων και επιστροφών χρημάτων για τις εκδρομές της Bekeridis Travel.",
       },
+      { property: "og:title", content: "Πολιτική Επιστροφών — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Κλίμακα ακυρώσεων και διαδικασία επιστροφών χρημάτων.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/refund-policy" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/refund-policy" },
     ],
   }),
   component: () => (

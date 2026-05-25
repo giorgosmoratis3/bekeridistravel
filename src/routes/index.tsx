@@ -105,7 +105,7 @@ const PHONE_LABEL = "6977 651 811";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bekeridis Travel — Εκδρομές, Ταξίδια, Ενοικιάσεις Λεωφορείων στον Δομοκό" },
+      { title: "Bekeridis Travel — Εκδρομές & Ταξίδια Δομοκός" },
       {
         name: "description",
         content:
@@ -115,6 +115,38 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Ανακαλύψτε νέους προορισμούς με το τουριστικό γραφείο Bekeridis Travel.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "Bekeridis Travel",
+          url: "https://bekeridistravel.lovable.app/",
+          telephone: ["+302232022255", "+302231069197", "+306977651811"],
+          email: "bekeridistravel@yahoo.gr",
+          areaServed: "GR",
+          address: [
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Δομοκός",
+              addressRegion: "Φθιώτιδα",
+              addressCountry: "GR",
+            },
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Λαμία",
+              addressRegion: "Φθιώτιδα",
+              addressCountry: "GR",
+            },
+          ],
+        }),
       },
     ],
   }),
@@ -181,7 +213,8 @@ function HomePage() {
                 ΔΟΜΟΚΟΣ · ΦΘΙΩΤΙΔΑ
               </p>
               <h1 className="font-display font-bold tracking-tight leading-[0.9] text-white text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] animate-[fade-in-up_1.1s_cubic-bezier(0.22,1,0.36,1)_0.25s_both]">
-                Bekeridis<span className="text-brand">.</span>
+                <span className="sr-only">Bekeridis Travel — Εκδρομές & Ταξίδια στον Δομοκό</span>
+                <span aria-hidden="true">Bekeridis<span className="text-brand">.</span></span>
               </h1>
               <p className="mt-6 md:mt-8 text-sm sm:text-base text-white/85 leading-relaxed max-w-md animate-[fade-in-up_1s_cubic-bezier(0.22,1,0.36,1)_0.5s_both]">
                 Με έδρα τον Δομοκό, η Bekeridis Travel σας ταξιδεύει σε

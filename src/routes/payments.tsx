@@ -4,12 +4,21 @@ import { LegalPage } from "@/components/legal-page";
 export const Route = createFileRoute("/payments")({
   head: () => ({
     meta: [
-      { title: "Τρόποι Πληρωμών & Ασφάλεια Συναλλαγών — Bekeridis Travel" },
+      { title: "Τρόποι Πληρωμών & Ασφάλεια — Bekeridis Travel" },
       {
         name: "description",
         content:
           "Τρόποι πληρωμής και ασφάλεια συναλλαγών στη Bekeridis Travel.",
       },
+      { property: "og:title", content: "Τρόποι Πληρωμών & Ασφάλεια — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Μετρητά, τραπεζική κατάθεση και κάρτες — ασφαλείς συναλλαγές.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/payments" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/payments" },
     ],
   }),
   component: () => (

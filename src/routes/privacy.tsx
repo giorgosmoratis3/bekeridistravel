@@ -10,6 +10,15 @@ export const Route = createFileRoute("/privacy")({
         content:
           "Πολιτική απορρήτου και προστασία προσωπικών δεδομένων (GDPR) της Bekeridis Travel.",
       },
+      { property: "og:title", content: "Πολιτική Απορρήτου — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Πώς διαχειριζόμαστε και προστατεύουμε τα προσωπικά σας δεδομένα.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/privacy" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/privacy" },
     ],
   }),
   component: () => (

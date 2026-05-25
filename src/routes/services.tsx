@@ -22,6 +22,10 @@ export const Route = createFileRoute("/services")({
         property: "og:description",
         content: "Λεωφορεία, εκδρομές, ταξίδια — όλα από έναν αξιόπιστο συνεργάτη.",
       },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/services" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/services" },
     ],
   }),
   component: ServicesPage,

@@ -67,6 +67,10 @@ export const Route = createFileRoute("/about")({
         property: "og:description",
         content: "Η ιστορία, η αποστολή και οι αξίες μας.",
       },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/about" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/about" },
     ],
   }),
   component: AboutPage,

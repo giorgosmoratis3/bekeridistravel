@@ -76,6 +76,7 @@ export function ContactForm() {
             required
             maxLength={100}
             placeholder="Ονοματεπώνυμο"
+            aria-label="Ονοματεπώνυμο"
             className="form-field"
           />
           <input
@@ -83,6 +84,7 @@ export function ContactForm() {
             type="tel"
             maxLength={30}
             placeholder="Τηλέφωνο"
+            aria-label="Τηλέφωνο"
             className="form-field"
           />
           <input
@@ -91,6 +93,7 @@ export function ContactForm() {
             required
             maxLength={255}
             placeholder="Email"
+            aria-label="Email"
             className="form-field"
           />
           <textarea
@@ -99,6 +102,7 @@ export function ContactForm() {
             rows={4}
             maxLength={1000}
             placeholder="Μήνυμα"
+            aria-label="Μήνυμα"
             className="form-field resize-none"
           />
 

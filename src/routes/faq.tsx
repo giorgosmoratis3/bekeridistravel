@@ -10,6 +10,74 @@ export const Route = createFileRoute("/faq")({
         content:
           "Απαντήσεις στις πιο συχνές ερωτήσεις για τις εκδρομές και τις υπηρεσίες της Bekeridis Travel.",
       },
+      { property: "og:title", content: "Συχνές Ερωτήσεις — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Κρατήσεις, τιμές, ακυρώσεις, ενοικιάσεις πούλμαν και ωράριο γραφείων.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/faq" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/faq" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Πώς μπορώ να κλείσω εκδρομή;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Μπορείτε να κλείσετε τηλεφωνικά στο 6977 651 811, μέσω της φόρμας επικοινωνίας ή με επίσκεψη στα γραφεία μας σε Δομοκό και Λαμία.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Τι περιλαμβάνεται στην τιμή;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Στην τιμή περιλαμβάνονται οι μεταφορές με σύγχρονο πούλμαν, ο συνοδός και — όπου αναφέρεται — η διαμονή και οι ξεναγήσεις. Δεν περιλαμβάνονται προσωπικά έξοδα και είσοδοι σε χώρους εκτός προγράμματος.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Μπορώ να ακυρώσω την κράτησή μου;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ναι. Δείτε αναλυτικά τους όρους στη σελίδα Πολιτική Επιστροφών.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Διοργανώνετε εκδρομές κατά παραγγελία;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ναι. Σχεδιάζουμε ιδιωτικές εκδρομές για συλλόγους, σχολεία, εταιρείες και ομάδες φίλων με πλήρη οργάνωση και προσωπική εξυπηρέτηση.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Ποιες ώρες λειτουργούν τα γραφεία;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Τα γραφεία μας λειτουργούν Δευτέρα έως Σάββατο, 08:00 – 14:00 & 17:00 – 20:00. Την Κυριακή είμαστε κλειστά αλλά διαθέσιμοι τηλεφωνικά για έκτακτες περιπτώσεις.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "Διαθέτετε πούλμαν για ενοικίαση;",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Ναι, διαθέτουμε σύγχρονο στόλο πούλμαν 26, 35 και 52 θέσεων για κάθε τύπο μετακίνησης.",
+              },
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: () => (
