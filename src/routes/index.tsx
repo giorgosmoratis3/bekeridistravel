@@ -213,7 +213,8 @@ function HomePage() {
                 ΔΟΜΟΚΟΣ · ΦΘΙΩΤΙΔΑ
               </p>
               <h1 className="font-display font-bold tracking-tight leading-[0.9] text-white text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] animate-[fade-in-up_1.1s_cubic-bezier(0.22,1,0.36,1)_0.25s_both]">
-                Bekeridis<span className="text-brand">.</span>
+                <span className="sr-only">Bekeridis Travel — Εκδρομές & Ταξίδια στον Δομοκό</span>
+                <span aria-hidden="true">Bekeridis<span className="text-brand">.</span></span>
               </h1>
               <p className="mt-6 md:mt-8 text-sm sm:text-base text-white/85 leading-relaxed max-w-md animate-[fade-in-up_1s_cubic-bezier(0.22,1,0.36,1)_0.5s_both]">
                 Με έδρα τον Δομοκό, η Bekeridis Travel σας ταξιδεύει σε
