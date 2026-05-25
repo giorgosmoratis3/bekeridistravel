@@ -10,6 +10,15 @@ export const Route = createFileRoute("/terms")({
         content:
           "Όροι και προϋποθέσεις χρήσης των υπηρεσιών της Bekeridis Travel.",
       },
+      { property: "og:title", content: "Όροι & Προϋποθέσεις — Bekeridis Travel" },
+      {
+        property: "og:description",
+        content: "Νομικοί όροι χρήσης του ιστότοπου και των υπηρεσιών μας.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/terms" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/terms" },
     ],
   }),
   component: () => (
