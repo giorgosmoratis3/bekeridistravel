@@ -105,7 +105,7 @@ const PHONE_LABEL = "6977 651 811";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bekeridis Travel — Εκδρομές, Ταξίδια, Ενοικιάσεις Λεωφορείων στον Δομοκό" },
+      { title: "Bekeridis Travel — Εκδρομές & Ταξίδια Δομοκός" },
       {
         name: "description",
         content:
@@ -115,6 +115,38 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Ανακαλύψτε νέους προορισμούς με το τουριστικό γραφείο Bekeridis Travel.",
+      },
+      { property: "og:url", content: "https://bekeridistravel.lovable.app/" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://bekeridistravel.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TravelAgency",
+          name: "Bekeridis Travel",
+          url: "https://bekeridistravel.lovable.app/",
+          telephone: ["+302232022255", "+302231069197", "+306977651811"],
+          email: "bekeridistravel@yahoo.gr",
+          areaServed: "GR",
+          address: [
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Δομοκός",
+              addressRegion: "Φθιώτιδα",
+              addressCountry: "GR",
+            },
+            {
+              "@type": "PostalAddress",
+              addressLocality: "Λαμία",
+              addressRegion: "Φθιώτιδα",
+              addressCountry: "GR",
+            },
+          ],
+        }),
       },
     ],
   }),
