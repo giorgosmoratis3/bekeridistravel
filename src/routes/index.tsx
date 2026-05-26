@@ -205,7 +205,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/30" />
         <div className="absolute inset-0 bg-ink/20" />
 
-        <div className="relative z-10 w-full pt-28 pb-16 md:pt-32 md:pb-20">
+        <div className="relative z-10 w-full pt-28 pb-4 md:pt-32 md:pb-20">
           <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
             {/* LEFT — Big title copy */}
             <div className="lg:col-span-7 text-white">
