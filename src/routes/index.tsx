@@ -206,7 +206,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-ink/20" />
 
         <div className="relative z-10 w-full pt-28 pb-16 md:pt-32 md:pb-20">
-          <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center lg:items-end">
+          <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
             {/* LEFT — Big title copy */}
             <div className="lg:col-span-7 text-white">
               <p className="font-display text-[10px] sm:text-xs tracking-[0.45em] text-white/70 mb-5 animate-[fade-in-up_0.9s_cubic-bezier(0.22,1,0.36,1)_0.1s_both]">
@@ -243,7 +243,7 @@ function HomePage() {
             </div>
 
             {/* RIGHT — Light glass panel with trip cards (lower on desktop) */}
-            <div className="lg:col-span-5 lg:mt-32 xl:mt-48 animate-[scale-in_0.7s_ease-out_0.2s_both]">
+            <div className="hidden lg:block lg:col-span-5 lg:mt-32 xl:mt-48 animate-[scale-in_0.7s_ease-out_0.2s_both]">
               <div className="relative rounded-2xl md:rounded-3xl border border-white/40 bg-white/20 backdrop-blur-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.4)] p-4 sm:p-5">
                 <div className="flex items-center justify-between mb-4 px-1">
                   <p className="font-display text-[10px] tracking-[0.35em] text-white">
