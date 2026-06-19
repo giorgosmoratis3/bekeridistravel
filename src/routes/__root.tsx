@@ -99,6 +99,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  if (typeof window !== "undefined") {
+    const host = window.location.hostname;
+    if (host.endsWith(".lovable.app")) {
+      const target =
+        "https://www.bekeridistravel.gr" +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+      window.location.replace(target);
+    }
+  }
   return (
     <>
       <Outlet />
