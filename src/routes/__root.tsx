@@ -33,6 +33,7 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { title: "Bekeridis Travel Agency" },
+      { property: "og:site_name", content: "Bekeridis Travel" },
       { property: "og:title", content: "Bekeridis Travel Agency" },
       { name: "twitter:title", content: "Bekeridis Travel Agency" },
       { name: "google-site-verification", content: "xCWu7MadIFxBZifWCNtSg3litRNog-tQV9zpP8NyEEI" },
