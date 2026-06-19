@@ -199,6 +199,8 @@ function HomePage() {
           alt="Σύγχρονο τουριστικό λεωφορείο σε ορεινό δρόμο"
           width={1920}
           height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover hero-kenburns"
         />
         {/* Stronger darkening so the Bekeridis title pops */}
