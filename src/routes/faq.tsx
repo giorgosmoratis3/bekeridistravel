@@ -15,10 +15,10 @@ export const Route = createFileRoute("/faq")({
         property: "og:description",
         content: "Κρατήσεις, τιμές, ακυρώσεις, ενοικιάσεις πούλμαν και ωράριο γραφείων.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/faq" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/faq" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/faq" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/faq" },
     ],
     scripts: [
       {

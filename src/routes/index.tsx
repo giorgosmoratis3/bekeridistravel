@@ -116,10 +116,10 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Ανακαλύψτε νέους προορισμούς με το τουριστικό γραφείο Bekeridis Travel.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/" },
     ],
     scripts: [
       {
@@ -128,7 +128,7 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "TravelAgency",
           name: "Bekeridis Travel",
-          url: "https://bekeridistravel.lovable.app/",
+          url: "https://www.bekeridistravel.gr/",
           telephone: ["+302232022255", "+302231069197", "+306977651811"],
           email: "bekeridistravel@yahoo.gr",
           areaServed: "GR",

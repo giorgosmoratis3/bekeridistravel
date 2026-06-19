@@ -15,10 +15,10 @@ export const Route = createFileRoute("/refund-policy")({
         property: "og:description",
         content: "Κλίμακα ακυρώσεων και διαδικασία επιστροφών χρημάτων.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/refund-policy" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/refund-policy" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/refund-policy" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/refund-policy" },
     ],
   }),
   component: () => (

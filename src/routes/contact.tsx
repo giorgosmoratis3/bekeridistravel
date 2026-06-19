@@ -19,10 +19,10 @@ export const Route = createFileRoute("/contact")({
         content:
           "Βρείτε μας σε Λαμία & Δομοκό ή επικοινωνήστε μαζί μας τηλεφωνικά.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/contact" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/contact" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/contact" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/contact" },
     ],
   }),
   component: ContactPage,

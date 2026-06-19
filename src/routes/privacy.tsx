@@ -15,10 +15,10 @@ export const Route = createFileRoute("/privacy")({
         property: "og:description",
         content: "Πώς διαχειριζόμαστε και προστατεύουμε τα προσωπικά σας δεδομένα.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/privacy" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/privacy" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/privacy" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/privacy" },
     ],
   }),
   component: () => (

@@ -15,10 +15,10 @@ export const Route = createFileRoute("/payments")({
         property: "og:description",
         content: "Μετρητά, τραπεζική κατάθεση και κάρτες — ασφαλείς συναλλαγές.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/payments" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/payments" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/payments" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/payments" },
     ],
   }),
   component: () => (
