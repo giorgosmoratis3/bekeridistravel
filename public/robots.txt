@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bekeridistravel.gr/sitemap.xml
+Sitemap: https://www.bekeridistravel.gr/sitemap.xml
