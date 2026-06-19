@@ -35,6 +35,7 @@ export const Route = createRootRoute({
       { title: "Bekeridis Travel Agency" },
       { property: "og:title", content: "Bekeridis Travel Agency" },
       { name: "twitter:title", content: "Bekeridis Travel Agency" },
+      { name: "google-site-verification", content: "xCWu7MadIFxBZifWCNtSg3litRNog-tQV9zpP8NyEEI" },
       { name: "description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
       { property: "og:description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
       { name: "twitter:description", content: "Bekeridis Travel is a local tourism agency based in Domokos" },
