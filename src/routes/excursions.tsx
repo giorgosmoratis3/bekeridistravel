@@ -190,10 +190,10 @@ export const Route = createFileRoute("/excursions")({
         content:
           "Δείτε τις προγραμματισμένες εκδρομές μας και τις επιλογές κατά παραγγελία.",
       },
-      { property: "og:url", content: "https://bekeridistravel.lovable.app/excursions" },
+      { property: "og:url", content: "https://www.bekeridistravel.gr/excursions" },
     ],
     links: [
-      { rel: "canonical", href: "https://bekeridistravel.lovable.app/excursions" },
+      { rel: "canonical", href: "https://www.bekeridistravel.gr/excursions" },
     ],
   }),
   component: ExcursionsPage,

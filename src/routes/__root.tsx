@@ -61,17 +61,17 @@ export const Route = createRootRoute({
           "@graph": [
             {
               "@type": "Organization",
-              "@id": "https://bekeridistravel.lovable.app/#organization",
+              "@id": "https://www.bekeridistravel.gr/#organization",
               name: "Bekeridis Travel",
-              url: "https://bekeridistravel.lovable.app",
-              logo: "https://bekeridistravel.lovable.app/favicon.png",
+              url: "https://www.bekeridistravel.gr",
+              logo: "https://www.bekeridistravel.gr/favicon.png",
             },
             {
               "@type": "WebSite",
-              "@id": "https://bekeridistravel.lovable.app/#website",
-              url: "https://bekeridistravel.lovable.app",
+              "@id": "https://www.bekeridistravel.gr/#website",
+              url: "https://www.bekeridistravel.gr",
               name: "Bekeridis Travel",
-              publisher: { "@id": "https://bekeridistravel.lovable.app/#organization" },
+              publisher: { "@id": "https://www.bekeridistravel.gr/#organization" },
             },
           ],
         }),
