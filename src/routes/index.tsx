@@ -282,7 +282,7 @@ function HomePage() {
                         key={t.name}
                         type="button"
                         onClick={() => setActiveTrip(t)}
-                        className="group relative shrink-0 w-[42%] sm:w-[32%] aspect-[3/4] overflow-hidden rounded-xl shadow-xl snap-start transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl animate-[fade-in_0.6s_ease-out_both]"
+                        className="group relative shrink-0 w-[42%] sm:w-[32%] lg:w-36 xl:w-40 aspect-[3/4] overflow-hidden rounded-xl shadow-xl snap-start transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl animate-[fade-in_0.6s_ease-out_both]"
                         style={{ animationDelay: `${0.3 + i * 0.08}s` }}
                       >
                         <img
