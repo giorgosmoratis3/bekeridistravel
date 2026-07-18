@@ -105,16 +105,24 @@ const PHONE_LABEL = "6977 651 811";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bekeridis Travel — Εκδρομές & Ταξίδια Δομοκός" },
+      { title: "Ταξιδιωτικό Γραφείο Λαμία & Φθιώτιδα | Bekeridis Travel" },
       {
         name: "description",
         content:
-          "Τουριστικό γραφείο Bekeridis Travel με έδρα τον Δομοκό. Οργανωμένες εκδρομές, πολυήμερα ταξίδια στην Ελλάδα και το εξωτερικό, ενοικιάσεις λεωφορείων.",
+          "Ταξιδιωτικό γραφείο σε Λαμία & Δομοκό Φθιώτιδας. Εκδρομές, πολυήμερα ταξίδια σε Ελλάδα & εξωτερικό, ενοικιάσεις λεωφορείων σε όλη τη Στερεά Ελλάδα.",
       },
-      { property: "og:title", content: "Bekeridis Travel — Εκδρομές & Ταξίδια από τον Δομοκό" },
+      {
+        name: "keywords",
+        content:
+          "ταξιδιωτικό γραφείο Λαμία, ταξιδιωτικό γραφείο Φθιώτιδα, τουριστικό γραφείο Στερεά Ελλάδα, εκδρομές Λαμία, εκδρομές Φθιώτιδα, ταξιδιωτικό πρακτορείο Δομοκός, ενοικίαση λεωφορείου Λαμία, Bekeridis Travel",
+      },
+      { name: "geo.region", content: "GR-06" },
+      { name: "geo.placename", content: "Λαμία, Δομοκός, Φθιώτιδα" },
+      { property: "og:title", content: "Ταξιδιωτικό Γραφείο Λαμία & Φθιώτιδα | Bekeridis Travel" },
       {
         property: "og:description",
-        content: "Ανακαλύψτε νέους προορισμούς με το τουριστικό γραφείο Bekeridis Travel.",
+        content:
+          "Εκδρομές, ταξίδια & ενοικιάσεις λεωφορείων από το ταξιδιωτικό γραφείο Bekeridis Travel σε Λαμία & Δομοκό Φθιώτιδας — Στερεά Ελλάδα.",
       },
       { property: "og:url", content: "https://www.bekeridistravel.gr/" },
     ],
@@ -127,23 +135,50 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "TravelAgency",
-          name: "Bekeridis Travel",
+          "@id": "https://www.bekeridistravel.gr/#travelagency",
+          name: "Bekeridis Travel — Ταξιδιωτικό Γραφείο Φθιώτιδας",
+          alternateName: ["Bekeridis Travel", "Μπεκερίδης Travel"],
+          description:
+            "Ταξιδιωτικό γραφείο σε Λαμία & Δομοκό Φθιώτιδας. Οργανωμένες εκδρομές, πολυήμερα ταξίδια σε Ελλάδα και εξωτερικό, ενοικιάσεις λεωφορείων σε όλη τη Στερεά Ελλάδα.",
           url: "https://www.bekeridistravel.gr/",
+          image: "https://www.bekeridistravel.gr/favicon.png",
           telephone: ["+302232022255", "+302231069197", "+306977651811"],
           email: "bekeridistravel@yahoo.gr",
-          areaServed: "GR",
-          address: [
+          priceRange: "€€",
+          areaServed: [
+            { "@type": "AdministrativeArea", name: "Φθιώτιδα" },
+            { "@type": "AdministrativeArea", name: "Στερεά Ελλάδα" },
+            { "@type": "City", name: "Λαμία" },
+            { "@type": "City", name: "Δομοκός" },
+            { "@type": "Country", name: "Ελλάδα" },
+          ],
+          keywords:
+            "ταξιδιωτικό γραφείο Λαμία, ταξιδιωτικό γραφείο Φθιώτιδα, τουριστικό γραφείο Στερεά Ελλάδα, εκδρομές Λαμία, εκδρομές Φθιώτιδα, ενοικίαση λεωφορείου Λαμία",
+          openingHours: "Mo-Sa 08:00-14:00, Mo-Sa 17:00-20:00",
+          location: [
             {
-              "@type": "PostalAddress",
-              addressLocality: "Δομοκός",
-              addressRegion: "Φθιώτιδα",
-              addressCountry: "GR",
+              "@type": "Place",
+              name: "Bekeridis Travel — Δομοκός",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Κεντρική Πλατεία",
+                addressLocality: "Δομοκός",
+                addressRegion: "Φθιώτιδα",
+                addressCountry: "GR",
+              },
+              telephone: "+302232022255",
             },
             {
-              "@type": "PostalAddress",
-              addressLocality: "Λαμία",
-              addressRegion: "Φθιώτιδα",
-              addressCountry: "GR",
+              "@type": "Place",
+              name: "Bekeridis Travel — Λαμία",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Αγριλιά",
+                addressLocality: "Λαμία",
+                addressRegion: "Φθιώτιδα",
+                addressCountry: "GR",
+              },
+              telephone: "+302231069197",
             },
           ],
         }),
