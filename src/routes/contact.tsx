@@ -7,17 +7,24 @@ import contactBanner from "@/assets/contact-banner.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Επικοινωνία — Bekeridis Travel | Λαμία & Δομοκός" },
+      { title: "Επικοινωνία — Ταξιδιωτικό Γραφείο Λαμία & Δομοκός | Bekeridis Travel" },
       {
         name: "description",
         content:
-          "Επικοινωνήστε με την Bekeridis Travel σε Λαμία & Δομοκό. Δομοκός: 22320 22255, Λαμία: 22310 69197, Κινητό: 6977 651 811.",
+          "Επικοινωνήστε με το ταξιδιωτικό γραφείο Bekeridis Travel σε Λαμία & Δομοκό Φθιώτιδας. Δομοκός: 22320 22255, Λαμία: 22310 69197, Κιν.: 6977 651 811.",
       },
-      { property: "og:title", content: "Επικοινωνία — Bekeridis Travel" },
+      {
+        name: "keywords",
+        content:
+          "ταξιδιωτικό γραφείο Λαμία τηλέφωνο, τουριστικό γραφείο Φθιώτιδα, ταξιδιωτικό γραφείο Δομοκός, επικοινωνία Bekeridis Travel, Στερεά Ελλάδα",
+      },
+      { name: "geo.region", content: "GR-06" },
+      { name: "geo.placename", content: "Λαμία, Δομοκός" },
+      { property: "og:title", content: "Επικοινωνία — Bekeridis Travel Λαμία & Δομοκός" },
       {
         property: "og:description",
         content:
-          "Βρείτε μας σε Λαμία & Δομοκό ή επικοινωνήστε μαζί μας τηλεφωνικά.",
+          "Ταξιδιωτικό γραφείο σε Λαμία & Δομοκό Φθιώτιδας — τηλέφωνα, διευθύνσεις και ωράριο.",
       },
       { property: "og:url", content: "https://www.bekeridistravel.gr/contact" },
     ],
