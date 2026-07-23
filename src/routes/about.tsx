@@ -7,7 +7,7 @@ import { FleetDialog } from "@/components/fleet-dialog";
 import { FLEET, type FleetItem } from "@/data/fleet";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
-import aboutHistory2003 from "@/assets/about-history-2003.jpg";
+import aboutHistory1965 from "@/assets/about-history-1965.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
