@@ -15,10 +15,10 @@ import missionNeoplan from "@/assets/about-mission-neoplan.jpg";
 
 const TIMELINE = [
   {
-    year: "2003",
+    year: "1965",
     title: "Η αρχή του ταξιδιού",
-    desc: "Ιδρύεται η Bekeridis Travel στον Δομοκό με όραμα και αγάπη για το ταξίδι.",
-    img: aboutHistory2003,
+    desc: "Το όνειρο γίνεται πραγματικότητα! Ιδρύεται το γραφείο μας με αγάπη για τον ταξιδιώτη και τη λεπτομέρεια.",
+    img: aboutHistory1965,
   },
   {
     year: "2008",
