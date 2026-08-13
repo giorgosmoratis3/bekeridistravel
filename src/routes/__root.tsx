@@ -1,5 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
+import { LanguageProvider } from "@/i18n";
 
 import appCss from "../styles.css?url";
 
@@ -111,9 +112,9 @@ function RootComponent() {
     }
   }
   return (
-    <>
+    <LanguageProvider>
       <Outlet />
       <Toaster position="top-center" richColors />
-    </>
+    </LanguageProvider>
   );
 }
