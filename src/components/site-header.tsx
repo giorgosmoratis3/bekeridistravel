@@ -2,6 +2,8 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { useT } from "@/i18n";
+import { LanguageToggle } from "@/components/language-toggle";
 
 const NAV = [
   { to: "/", label: "ΑΡΧΙΚΗ", hash: undefined },
@@ -16,6 +18,7 @@ const PHONE = "+306977651811";
 const PHONE_DISPLAY = "6977 651 811";
 
 export function SiteHeader() {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -92,7 +95,7 @@ export function SiteHeader() {
                         : "text-white hover:text-brand"
                   }`}
                 >
-                  {item.label}
+                  {t(item.label)}
                 </Link>
               );
             })}
@@ -100,6 +103,7 @@ export function SiteHeader() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2 shrink-0">
+            <LanguageToggle dark={scrolled && !open} />
             <a
               href={`tel:${PHONE}`}
               className={`hidden sm:inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
@@ -109,7 +113,7 @@ export function SiteHeader() {
               }`}
             >
               <Phone size={14} />
-              <span className="hidden lg:inline">ΚΑΛΕΣΤΕ ΜΑΣ</span>
+              <span className="hidden lg:inline">{t("ΚΑΛΕΣΤΕ ΜΑΣ")}</span>
               <span className="lg:hidden">{PHONE_DISPLAY}</span>
             </a>
 
@@ -141,7 +145,7 @@ export function SiteHeader() {
                       active ? "text-brand" : "text-white/90 hover:text-brand"
                     }`}
                   >
-                    {item.label}
+                    {t(item.label)}
                   </Link>
                 );
               })}
