@@ -205,6 +205,12 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Bekeridis Travel · Γραφείο Γενικού
             Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.
           </p>
+          <Link
+            to="/admin"
+            className="mt-3 inline-block text-xs text-white/40 hover:text-brand transition-colors"
+          >
+            Είσοδος admin
+          </Link>
         </div>
       </div>
     </footer>
