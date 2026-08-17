@@ -2,180 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Calendar, Clock, MapPin, Phone } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import servicesBanner from "@/assets/services-banner.jpg";
-import meteora from "@/assets/destination-meteora.jpg";
-import island from "@/assets/destination-island.jpg";
-import athens from "@/assets/destination-athens.jpg";
-import village from "@/assets/destination-village.jpg";
-import trikeriImg from "@/assets/excursion-trikeri.jpg";
-import prousiotissaImg from "@/assets/excursion-prousiotissa.jpg";
-import tinosImg from "@/assets/excursion-tinos.jpg";
-import tinosPilgrimageImg from "@/assets/excursion-tinos-pilgrimage.jpg";
-import serviceTrips from "@/assets/service-trips.jpg";
-import thessalonikiImg from "@/assets/excursion-thessaloniki.jpg";
-import ionianImg from "@/assets/excursion-ionian.jpg";
-import schoolImg from "@/assets/excursion-school.jpg";
-import pelionImg from "@/assets/excursion-pelion.jpg";
-
+import { fetchExcursions, type Excursion } from "@/lib/excursions";
 
 const PHONE_TEL = "+306977651811";
 const PHONE_LABEL = "6977 651 811";
 
-type ReadyExcursion = {
-  img: string;
-  name: string;
-  date: string;
-  tag: string;
-  duration: string;
-  location: string;
-  description: string;
-};
-
-type CustomExcursion = {
-  img: string;
-  name: string;
-  tag: string;
-  duration: string;
-  location: string;
-  description: string;
-};
-
-const READY_EXCURSIONS: ReadyExcursion[] = [
-  {
-    img: trikeriImg,
-    name: "Τρίκερι",
-    date: "23 Μαΐου",
-    tag: "Μονοήμερη Οδική",
-    duration: "1 ημέρα",
-    location: "Τρίκερι, Πήλιο",
-    description:
-      "Μονοήμερη οδική εκδρομή στο γραφικό Τρίκερι του Πηλίου, με χρόνο για περίπατο και γεύμα δίπλα στη θάλασσα.",
-  },
-  {
-    img: prousiotissaImg,
-    name: "Παναγία Προυσιώτισσα",
-    date: "7 Ιουνίου",
-    tag: "Προσκύνημα",
-    duration: "1 ημέρα",
-    location: "Ευρυτανία",
-    description:
-      "Μονοήμερη οδική εκδρομή — επίσκεψη στο ιστορικό μοναστήρι της Παναγίας Προυσιώτισσας στα βουνά της Ευρυτανίας.",
-  },
-  {
-    img: tinosImg,
-    name: "Τήνος",
-    date: "30 – 31 Αυγούστου",
-    tag: "Διήμερη",
-    duration: "2 ημέρες",
-    location: "Τήνος",
-    description:
-      "Διήμερη εκδρομή στο νησί της Τήνου, με προσκύνημα στην Παναγία και ελεύθερο χρόνο στη Χώρα.",
-  },
-  {
-    img: tinosPilgrimageImg,
-    name: "Τήνος — Προσκύνημα & Περιήγηση",
-    date: "16 – 17 Σεπτεμβρίου",
-    tag: "Διήμερη Προσκυνηματική",
-    duration: "2 ημέρες",
-    location: "Τήνος",
-    description:
-      "Ταξίδι με καράβι · Προσκύνημα Αγίας Πελαγίας · Περιήγηση στο νησί με έμπειρους συνοδούς.",
-  },
-];
-
-const CUSTOM_EXCURSIONS: CustomExcursion[] = [
-  {
-    img: athens,
-    name: "Αθήνα",
-    tag: "City Break",
-    duration: "Κατ' επιλογή",
-    location: "Αττική",
-    description:
-      "City break στην πρωτεύουσα: Ακρόπολη, Πλάκα, μουσεία και shopping. Διοργανώνουμε το πρόγραμμα σύμφωνα με τις ανάγκες σας.",
-  },
-  {
-    img: serviceTrips,
-    name: "Ευρώπη",
-    tag: "Εξωτερικό",
-    duration: "Κατ' επιλογή",
-    location: "Κεντρική Ευρώπη",
-    description:
-      "Οργανωμένα ταξίδια σε μεγάλους ευρωπαϊκούς προορισμούς με αεροπορικά εισιτήρια, ξενοδοχεία και ξεναγήσεις της επιλογής σας.",
-  },
-  {
-    img: island,
-    name: "Νησιά Αιγαίου",
-    tag: "Πολυήμερο",
-    duration: "Κατ' επιλογή",
-    location: "Κυκλάδες",
-    description:
-      "Πολυήμερη απόδραση στα ομορφότερα νησιά του Αιγαίου με διαμονή, μεταφορές και επιλεγμένες ξεναγήσεις στα μέτρα σας.",
-  },
-  {
-    img: meteora,
-    name: "Μετέωρα",
-    tag: "Ημερήσια Εκδρομή",
-    duration: "Κατ' επιλογή",
-    location: "Καλαμπάκα",
-    description:
-      "Επίσκεψη στα μοναστήρια των Μετεώρων με ξενάγηση. Διοργανώνουμε την εκδρομή την ημερομηνία που σας εξυπηρετεί.",
-  },
-  {
-    img: village,
-    name: "Ορεινά Χωριά",
-    tag: "Φύση",
-    duration: "Κατ' επιλογή",
-    location: "Πήλιο",
-    description:
-      "Διαδρομή στα γραφικά ορεινά χωριά με γεύμα σε παραδοσιακή ταβέρνα και περίπατο στη φύση.",
-  },
-  {
-    img: pelionImg,
-    name: "Πήλιο & Παραλίες",
-    tag: "Σαββατοκύριακο",
-    duration: "Κατ' επιλογή",
-    location: "Μαγνησία",
-    description:
-      "Απόδραση στο Πήλιο με στάσεις σε γραφικά χωριά, μοναδικές παραλίες και γεύσεις της παραδοσιακής κουζίνας.",
-  },
-  {
-    img: prousiotissaImg,
-    name: "Προσκυνηματικά",
-    tag: "Θρησκευτικός Τουρισμός",
-    duration: "Κατ' επιλογή",
-    location: "Ελλάδα",
-    description:
-      "Οργανωμένα προσκυνήματα σε σημαντικά μοναστήρια και ιερούς τόπους της Ελλάδας με έμπειρους συνοδούς.",
-  },
-  {
-    img: thessalonikiImg,
-    name: "Θεσσαλονίκη",
-    tag: "City Break",
-    duration: "Κατ' επιλογή",
-    location: "Μακεδονία",
-    description:
-      "Διήμερη ή τριήμερη απόδραση στη συμπρωτεύουσα: παραλιακή, Άνω Πόλη, μουσεία και αυθεντική γαστρονομία.",
-  },
-  {
-    img: ionianImg,
-    name: "Επτάνησα",
-    tag: "Πολυήμερο",
-    duration: "Κατ' επιλογή",
-    location: "Ιόνιο",
-    description:
-      "Πολυήμερη εκδρομή σε Κέρκυρα, Λευκάδα ή Κεφαλονιά με μεταφορά, διαμονή και ξεναγήσεις στα ομορφότερα σημεία.",
-  },
-  {
-    img: schoolImg,
-    name: "Σχολικές Εκδρομές",
-    tag: "Ομαδικό",
-    duration: "Κατ' επιλογή",
-    location: "Πανελλαδικά",
-    description:
-      "Ασφαλείς και οργανωμένες σχολικές εκδρομές με έμπειρους οδηγούς και συνοδούς, σχεδιασμένες για κάθε ηλικία.",
-  },
-];
-
 export const Route = createFileRoute("/excursions")({
+  loader: async () => ({ excursions: await fetchExcursions() }),
   head: () => ({
     meta: [
       { title: "Εκδρομές — Bekeridis Travel" },
@@ -215,6 +48,10 @@ function SectionHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: s
 }
 
 function ExcursionsPage() {
+  const { excursions } = Route.useLoaderData();
+  const READY_EXCURSIONS: Excursion[] = excursions.filter((e) => e.kind === "ready");
+  const CUSTOM_EXCURSIONS: Excursion[] = excursions.filter((e) => e.kind === "custom");
+
   return (
     <PageShell>
       {/* HERO */}
@@ -254,12 +91,12 @@ function ExcursionsPage() {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {READY_EXCURSIONS.map((e) => (
               <a
-                key={e.name + e.date}
+                key={e.id}
                 href={`tel:${PHONE_TEL}`}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-md active:scale-[0.98] transition-transform"
               >
                 <img
-                  src={e.img}
+                  src={e.image_url}
                   alt={e.name}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -267,7 +104,7 @@ function ExcursionsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
                 <div className="absolute top-2 left-2 inline-flex items-center gap-1 px-2 py-0.5 bg-brand text-brand-foreground font-display text-[9px] tracking-[0.15em] rounded">
                   <Calendar size={9} strokeWidth={2.2} />
-                  {e.date}
+                  {e.date_label}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-3 text-left">
                   <div className="font-display font-bold text-white text-sm leading-tight">{e.name}</div>
@@ -287,20 +124,20 @@ function ExcursionsPage() {
           <div className="hidden md:grid grid-cols-2 gap-8">
             {READY_EXCURSIONS.map((e, i) => (
               <article
-                key={e.name + e.date}
+                key={e.id}
                 className="reveal group relative overflow-hidden bg-white border border-ink/10 shadow-soft hover:shadow-xl transition-all"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
-                    src={e.img}
+                    src={e.image_url}
                     alt={e.name}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand text-brand-foreground font-display text-[11px] tracking-[0.2em]">
                     <Calendar size={13} strokeWidth={2} />
-                    {e.date}
+                    {e.date_label}
                   </div>
                 </div>
                 <div className="p-6">
@@ -350,12 +187,12 @@ function ExcursionsPage() {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {CUSTOM_EXCURSIONS.map((e) => (
               <a
-                key={e.name}
+                key={e.id}
                 href={`tel:${PHONE_TEL}`}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-md active:scale-[0.98] transition-transform"
               >
                 <img
-                  src={e.img}
+                  src={e.image_url}
                   alt={e.name}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -375,14 +212,14 @@ function ExcursionsPage() {
           <div className="hidden md:block space-y-24">
             {CUSTOM_EXCURSIONS.map((e, i) => (
               <article
-                key={e.name}
+                key={e.id}
                 className={`grid md:grid-cols-2 gap-12 items-center ${
                   i % 2 === 1 ? "md:[direction:rtl]" : ""
                 }`}
               >
                 <div className={i % 2 === 0 ? "reveal-left" : "reveal-right md:[direction:ltr]"}>
                   <img
-                    src={e.img}
+                    src={e.image_url}
                     alt={e.name}
                     width={1024}
                     height={768}

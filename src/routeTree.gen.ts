@@ -19,8 +19,10 @@ import { Route as ParticipationTermsRouteImport } from './routes/participation-t
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExcursionsRouteImport } from './routes/excursions'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiPublicExcursionImageSplatRouteImport } from './routes/api/public/excursion-image/$'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -72,6 +74,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -82,10 +89,17 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicExcursionImageSplatRoute =
+  ApiPublicExcursionImageSplatRouteImport.update({
+    id: '/api/public/excursion-image/$',
+    path: '/api/public/excursion-image/$',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/excursions': typeof ExcursionsRoute
   '/faq': typeof FaqRoute
@@ -96,10 +110,12 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/api/public/excursion-image/$': typeof ApiPublicExcursionImageSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/excursions': typeof ExcursionsRoute
   '/faq': typeof FaqRoute
@@ -110,11 +126,13 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/api/public/excursion-image/$': typeof ApiPublicExcursionImageSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/contact': typeof ContactRoute
   '/excursions': typeof ExcursionsRoute
   '/faq': typeof FaqRoute
@@ -125,12 +143,14 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/api/public/excursion-image/$': typeof ApiPublicExcursionImageSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/excursions'
     | '/faq'
@@ -141,10 +161,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms'
+    | '/api/public/excursion-image/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/excursions'
     | '/faq'
@@ -155,10 +177,12 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms'
+    | '/api/public/excursion-image/$'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/contact'
     | '/excursions'
     | '/faq'
@@ -169,11 +193,13 @@ export interface FileRouteTypes {
     | '/services'
     | '/sitemap.xml'
     | '/terms'
+    | '/api/public/excursion-image/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
   ContactRoute: typeof ContactRoute
   ExcursionsRoute: typeof ExcursionsRoute
   FaqRoute: typeof FaqRoute
@@ -184,6 +210,7 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  ApiPublicExcursionImageSplatRoute: typeof ApiPublicExcursionImageSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -258,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -272,12 +306,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/excursion-image/$': {
+      id: '/api/public/excursion-image/$'
+      path: '/api/public/excursion-image/$'
+      fullPath: '/api/public/excursion-image/$'
+      preLoaderRoute: typeof ApiPublicExcursionImageSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
   ContactRoute: ContactRoute,
   ExcursionsRoute: ExcursionsRoute,
   FaqRoute: FaqRoute,
@@ -288,6 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  ApiPublicExcursionImageSplatRoute: ApiPublicExcursionImageSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
