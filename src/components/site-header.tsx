@@ -77,7 +77,7 @@ export function SiteHeader() {
           </Link>
 
           {/* Nav (centered, takes remaining space) */}
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-6 xl:gap-8 min-w-0">
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-4 lg:gap-5 xl:gap-8 min-w-0">
             {NAV.map((item) => {
               const currentHash = location.hash.replace("#", "") || undefined;
               const active =
@@ -87,7 +87,7 @@ export function SiteHeader() {
                   key={`${item.to}#${item.hash ?? ""}`}
                   to={item.to}
                   hash={item.hash}
-                  className={`hover-bar font-display text-[11px] lg:text-[13px] tracking-[0.12em] lg:tracking-[0.18em] transition-colors duration-500 pb-1 whitespace-nowrap ${
+                  className={`hover-bar font-display text-[11px] lg:text-[12px] xl:text-[13px] tracking-[0.1em] xl:tracking-[0.16em] transition-colors duration-500 pb-1 whitespace-nowrap ${
                     active
                       ? "text-brand"
                       : scrolled
@@ -102,7 +102,7 @@ export function SiteHeader() {
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-4 lg:gap-5 shrink-0">
+          <div className="flex items-center gap-3 lg:gap-4 shrink-0">
             <a
               href={`tel:${PHONE}`}
               className={`hidden sm:inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
@@ -112,15 +112,15 @@ export function SiteHeader() {
               }`}
             >
               <Phone size={14} />
-              <span className="hidden lg:inline">{t("ΚΑΛΕΣΤΕ ΜΑΣ")}</span>
-              <span className="lg:hidden">{PHONE_DISPLAY}</span>
+              <span className="hidden xl:inline">{t("ΚΑΛΕΣΤΕ ΜΑΣ")}</span>
+              <span className="xl:hidden">{PHONE_DISPLAY}</span>
             </a>
             <LanguageToggle dark={scrolled && !open} />
 
 
             <button
               onClick={() => setOpen((v) => !v)}
-              className={`md:hidden p-2 -mr-1 transition-colors duration-500 ${
+              className={`lg:hidden p-2 -mr-1 transition-colors duration-500 ${
                 scrolled && !open ? "text-ink" : "text-white"
               }`}
               aria-label="Menu"
@@ -131,7 +131,7 @@ export function SiteHeader() {
         </div>
 
         {open && (
-          <div className="md:hidden pb-5 animate-in fade-in slide-in-from-top-2 duration-300">
+          <div className="lg:hidden pb-5 animate-in fade-in slide-in-from-top-2 duration-300">
             <nav className="flex flex-col gap-1 pt-3 border-t border-white/15">
               {NAV.map((item) => {
                 const currentHash = location.hash.replace("#", "") || undefined;
