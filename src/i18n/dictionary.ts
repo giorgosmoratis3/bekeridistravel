@@ -168,6 +168,7 @@ export const EN: Record<string, string> = {
   "Σύγχρονος στόλος πούλμαν & οργανωμένες εκδρομές":
     "Modern coach fleet & organised excursions",
   "ΕΛΛΗΝΙΚΟΣ ΟΡΓΑΝΙΣΜΟΣ ΤΟΥΡΙΣΜΟΥ": "GREEK NATIONAL TOURISM ORGANISATION",
+  "ΑΡ. ΜΗΤΕ": "GNTO REG. NO.",
 
   // ---- About page ----
   "Η αρχή του ταξιδιού": "The start of the journey",

@@ -186,6 +186,16 @@ export function SiteFooter() {
                 </div>
               </div>
             </div>
+
+            <div className="mt-4 inline-flex flex-col border border-white/15 bg-white/[0.03] px-4 py-3">
+              <span className="font-display text-[10px] tracking-[0.25em] text-white/60">
+                ΑΡ. ΜΗΤΕ
+              </span>
+              <span className="mt-1 font-display text-sm md:text-base font-semibold tracking-[0.14em] text-brand">
+                1353E60000008901
+              </span>
+            </div>
+
           </div>
         </div>
 
