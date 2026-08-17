@@ -496,12 +496,16 @@ export const EN: Record<string, string> = {
   "Χάρτης": "Map",
   "Τ.:": "Tel.:",
   "Κιν.:": "Mob.:",
+  "θέσεων": "seats",
+  "θέσεις": "seats",
 };
 
 /** Fallback rules for dynamically composed strings. */
 const PATTERNS: Array<[RegExp, string]> = [
   [/^(.+?)\s(\d+)\sθέσεων$/u, "$1 $2 seats"],
+  [/^(\d+)\sθέσεων$/u, "$1 seats"],
   [/^(\d+)\sθέσεις$/u, "$1 seats"],
+
   [/^(\d+)\sημέρες$/u, "$1 days"],
   [/^(\d+)\sημέρα$/u, "$1 day"],
   [/^Αξιολόγηση\s(\d+)$/u, "Review $1"],
