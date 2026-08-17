@@ -200,14 +200,15 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 md:mt-16 pt-8 border-t border-white/10">
+        <div className="mt-14 md:mt-16 pt-8 border-t border-white/10 flex flex-col items-center text-center">
           <p className="text-xs md:text-sm text-white/55">
             © {new Date().getFullYear()} Bekeridis Travel · Γραφείο Γενικού
             Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.
           </p>
+          <div className="mt-4 h-px w-24 bg-white/15" />
           <Link
             to="/admin"
-            className="mt-3 inline-block text-xs text-white/40 hover:text-brand transition-colors"
+            className="mt-4 inline-block text-xs text-white/40 hover:text-brand transition-colors"
           >
             Είσοδος admin
           </Link>
