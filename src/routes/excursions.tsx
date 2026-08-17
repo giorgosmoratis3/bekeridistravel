@@ -48,6 +48,10 @@ function SectionHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: s
 }
 
 function ExcursionsPage() {
+  const { excursions } = Route.useLoaderData();
+  const READY_EXCURSIONS: Excursion[] = excursions.filter((e) => e.kind === "ready");
+  const CUSTOM_EXCURSIONS: Excursion[] = excursions.filter((e) => e.kind === "custom");
+
   return (
     <PageShell>
       {/* HERO */}
@@ -87,12 +91,12 @@ function ExcursionsPage() {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {READY_EXCURSIONS.map((e) => (
               <a
-                key={e.name + e.date}
+                key={e.id}
                 href={`tel:${PHONE_TEL}`}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-md active:scale-[0.98] transition-transform"
               >
                 <img
-                  src={e.img}
+                  src={e.image_url}
                   alt={e.name}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -100,7 +104,7 @@ function ExcursionsPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
                 <div className="absolute top-2 left-2 inline-flex items-center gap-1 px-2 py-0.5 bg-brand text-brand-foreground font-display text-[9px] tracking-[0.15em] rounded">
                   <Calendar size={9} strokeWidth={2.2} />
-                  {e.date}
+                  {e.date_label}
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-3 text-left">
                   <div className="font-display font-bold text-white text-sm leading-tight">{e.name}</div>
@@ -120,20 +124,20 @@ function ExcursionsPage() {
           <div className="hidden md:grid grid-cols-2 gap-8">
             {READY_EXCURSIONS.map((e, i) => (
               <article
-                key={e.name + e.date}
+                key={e.id}
                 className="reveal group relative overflow-hidden bg-white border border-ink/10 shadow-soft hover:shadow-xl transition-all"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
-                    src={e.img}
+                    src={e.image_url}
                     alt={e.name}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand text-brand-foreground font-display text-[11px] tracking-[0.2em]">
                     <Calendar size={13} strokeWidth={2} />
-                    {e.date}
+                    {e.date_label}
                   </div>
                 </div>
                 <div className="p-6">
@@ -183,12 +187,12 @@ function ExcursionsPage() {
           <div className="md:hidden grid grid-cols-2 gap-3">
             {CUSTOM_EXCURSIONS.map((e) => (
               <a
-                key={e.name}
+                key={e.id}
                 href={`tel:${PHONE_TEL}`}
                 className="group relative aspect-square overflow-hidden rounded-xl shadow-md active:scale-[0.98] transition-transform"
               >
                 <img
-                  src={e.img}
+                  src={e.image_url}
                   alt={e.name}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -208,14 +212,14 @@ function ExcursionsPage() {
           <div className="hidden md:block space-y-24">
             {CUSTOM_EXCURSIONS.map((e, i) => (
               <article
-                key={e.name}
+                key={e.id}
                 className={`grid md:grid-cols-2 gap-12 items-center ${
                   i % 2 === 1 ? "md:[direction:rtl]" : ""
                 }`}
               >
                 <div className={i % 2 === 0 ? "reveal-left" : "reveal-right md:[direction:ltr]"}>
                   <img
-                    src={e.img}
+                    src={e.image_url}
                     alt={e.name}
                     width={1024}
                     height={768}
