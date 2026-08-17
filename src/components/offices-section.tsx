@@ -1,4 +1,5 @@
 import { Phone, Smartphone, Mail, MapPin, Clock } from "lucide-react";
+import { useT } from "@/i18n";
 
 type Office = {
   title: string;
@@ -59,8 +60,8 @@ export function OfficesSection(_props: {
               style={{ transitionDelay: `${idx * 120}ms` }}
             >
               <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink tracking-wide text-center mb-3">
-                <span className="letter-reveal inline-block" aria-label={o.title}>
-                  {Array.from(o.title).map((ch, i) => (
+                <span className="letter-reveal inline-block" aria-label={t(o.title)}>
+                  {Array.from(t(o.title)).map((ch, i) => (
                     <span
                       key={`${o.title}-${i}`}
                       className="letter"
