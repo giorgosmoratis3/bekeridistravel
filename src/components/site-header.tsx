@@ -102,8 +102,7 @@ export function SiteHeader() {
           </nav>
 
           {/* Right actions */}
-          <div className="flex items-center gap-2 shrink-0">
-            <LanguageToggle dark={scrolled && !open} />
+          <div className="flex items-center gap-4 lg:gap-5 shrink-0">
             <a
               href={`tel:${PHONE}`}
               className={`hidden sm:inline-flex items-center gap-2 px-3 lg:px-5 py-2 font-display text-[11px] lg:text-sm tracking-[0.18em] whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 ${
@@ -116,6 +115,8 @@ export function SiteHeader() {
               <span className="hidden lg:inline">{t("ΚΑΛΕΣΤΕ ΜΑΣ")}</span>
               <span className="lg:hidden">{PHONE_DISPLAY}</span>
             </a>
+            <LanguageToggle dark={scrolled && !open} />
+
 
             <button
               onClick={() => setOpen((v) => !v)}
