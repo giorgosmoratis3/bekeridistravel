@@ -39,6 +39,7 @@ export function OfficesSection(_props: {
   eyebrow?: string;
   title?: string;
 } = {}) {
+  const t = useT();
   return (
     <section className="bg-white py-20 md:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-6xl">
