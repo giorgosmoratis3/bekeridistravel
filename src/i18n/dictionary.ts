@@ -492,6 +492,8 @@ export const EN: Record<string, string> = {
   "Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.":
     "Agency in Domokos & Lamia. All rights reserved.",
   "ΚΡΑΤΗΣΗ": "BOOK",
+  "ΓΡΑΦΕΙΟ ΔΟΜΟΚΟΥ": "DOMOKOS OFFICE",
+  "ΥΠΟΚΑΤΑΣΤΗΜΑ ΛΑΜΙΑΣ": "LAMIA BRANCH",
   "Τ.:": "Tel.:",
   "Κιν.:": "Mob.:",
 };
