@@ -474,6 +474,26 @@ export const EN: Record<string, string> = {
     "See our scheduled excursions and tailor-made options.",
   "Κρατήσεις, τιμές, ακυρώσεις, ενοικιάσεις πούλμαν και ωράριο γραφείων.":
     "Bookings, prices, cancellations, coach rentals and office hours.",
+  "Ενοικιάσεις Πούλμαν": "Coach Rentals",
+  "Γραφείο Γενικού Τουρισμού": "General Tourism Agency",
+  "Διαθέτουμε σύγχρονο και πλήρως αδειοδοτημένο στόλο για κάθε ανάγκη μετακίνησης. Σχολικές εκδρομές, εταιρικά event, μεταφορές αθλητικών συλλόγων και ιδιωτικά γκρουπ. Άνεση, ασφάλεια και επαγγελματίες οδηγοί σε κάθε διαδρομή.":
+    "We operate a modern, fully licensed fleet for every transport need. School trips, corporate events, sports club transfers and private groups. Comfort, safety and professional drivers on every route.",
+  "Ημερήσιες και πολυήμερες εκδρομές σε επιλεγμένους προορισμούς της Ελλάδας. Μοναστήρια, ιστορικοί τόποι, παραδοσιακά χωριά, ορεινοί προορισμοί και θερμές πηγές. Πλήρες πρόγραμμα με ξεναγήσεις και διαμονή.":
+    "Day and multi-day excursions to selected destinations across Greece. Monasteries, historic sites, traditional villages, mountain destinations and hot springs. A full programme with guided tours and accommodation.",
+  "Από τα ελληνικά νησιά μέχρι τα Βαλκάνια και την υπόλοιπη Ευρώπη — σχεδιάζουμε ταξίδια αναψυχής με προσοχή σε κάθε λεπτομέρεια. Ξενοδοχεία, ξεναγήσεις και ξεκούραστη διαμονή.":
+    "From the Greek islands to the Balkans and the rest of Europe — we design leisure trips with attention to every detail. Hotels, guided tours and restful accommodation.",
+  "Ναι. Δείτε αναλυτικά τους όρους στη σελίδα": "Yes. See the full terms on the page",
+  "Ναι, διαθέτουμε σύγχρονο στόλο πούλμαν 26, 35 και 52 θέσεων για κάθε τύπο μετακίνησης. Δείτε τον στόλο μας στη σελίδα":
+    "Yes, we have a modern fleet of 26-, 35- and 52-seat coaches for every type of transfer. See our fleet on the page",
+  "Τελευταία ενημέρωση:": "Last updated:",
+  ". Για διευκρινίσεις επικοινωνήστε μαζί μας στο": ". For clarifications please contact us at",
+  "Bekeridis Travel · Γραφείο Γενικού Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.":
+    "Bekeridis Travel · General Tourism Agency in Domokos & Lamia. All rights reserved.",
+  "Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.":
+    "Agency in Domokos & Lamia. All rights reserved.",
+  "ΚΡΑΤΗΣΗ": "BOOK",
+  "Τ.:": "Tel.:",
+  "Κιν.:": "Mob.:",
 };
 
 /** Fallback rules for dynamically composed strings. */
@@ -487,13 +507,63 @@ const PATTERNS: Array<[RegExp, string]> = [
   [/^Νέο μήνυμα από\s(.+)$/u, "New message from $1"],
 ];
 
+const GREEKRE = /[\u0386-\u03ce\u1f00-\u1fff]/;
+
+const UPPER: Record<string, string> = {};
+for (const [k, v] of Object.entries(EN)) UPPER[k.toUpperCase()] = v.toUpperCase();
+
+const MONTHS: Record<string, string> = {
+  "Ιανουαρίου": "January",
+  "Φεβρουαρίου": "February",
+  "Μαρτίου": "March",
+  "Απριλίου": "April",
+  "Μαΐου": "May",
+  "Ιουνίου": "June",
+  "Ιουλίου": "July",
+  "Αυγούστου": "August",
+  "Σεπτεμβρίου": "September",
+  "Οκτωβρίου": "October",
+  "Νοεμβρίου": "November",
+  "Δεκεμβρίου": "December",
+};
+
 export function translateText(input: string): string | null {
-  const key = input.trim();
+  const key = input.replace(/\u00a0/g, " ").trim();
   if (!key) return null;
+
   const direct = EN[key];
   if (direct) return direct;
+
+  const upper = UPPER[key];
+  if (upper) return upper;
+
   for (const [re, rep] of PATTERNS) {
     if (re.test(key)) return key.replace(re, rep);
   }
+
+  const date = key.match(/^(\d{1,2})\s([\u0386-\u03ce]+)\s(\d{4})$/u);
+  if (date && MONTHS[date[2]]) return date[1] + " " + MONTHS[date[2]] + " " + date[3];
+
+  for (const sep of [" — ", " · "]) {
+    if (key.includes(sep)) {
+      const parts = key.split(sep);
+      const mapped = parts.map((p) => {
+        const tp = p.trim();
+        return EN[tp] ?? UPPER[tp] ?? (GREEKRE.test(tp) ? null : tp);
+      });
+      if (
+        mapped.every((m) => m !== null) &&
+        mapped.some((m, i) => m !== parts[i].trim())
+      )
+        return mapped.join(sep);
+    }
+  }
+
+  const trail = key.match(/^(.+?)\s*([—:·])$/u);
+  if (trail) {
+    const head = EN[trail[1]] ?? UPPER[trail[1]];
+    if (head) return head + " " + trail[2];
+  }
+
   return null;
 }
