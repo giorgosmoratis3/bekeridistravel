@@ -492,6 +492,9 @@ export const EN: Record<string, string> = {
   "Τουρισμού στον Δομοκό & Λαμία. Με την επιφύλαξη παντός δικαιώματος.":
     "Agency in Domokos & Lamia. All rights reserved.",
   "ΚΡΑΤΗΣΗ": "BOOK",
+  "Χάρτης": "Map",
+  "ΓΡΑΦΕΙΟ ΔΟΜΟΚΟΥ": "DOMOKOS OFFICE",
+  "ΥΠΟΚΑΤΑΣΤΗΜΑ ΛΑΜΙΑΣ": "LAMIA BRANCH",
   "Τ.:": "Tel.:",
   "Κιν.:": "Mob.:",
 };
@@ -503,7 +506,6 @@ const PATTERNS: Array<[RegExp, string]> = [
   [/^(\d+)\sημέρες$/u, "$1 days"],
   [/^(\d+)\sημέρα$/u, "$1 day"],
   [/^Αξιολόγηση\s(\d+)$/u, "Review $1"],
-  [/^(.+)\s—\sΧάρτης$/u, "$1 — Map"],
   [/^Νέο μήνυμα από\s(.+)$/u, "New message from $1"],
 ];
 
