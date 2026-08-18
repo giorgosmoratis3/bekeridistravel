@@ -8,6 +8,7 @@ import { FLEET, type FleetItem } from "@/data/fleet";
 import aboutMountains from "@/assets/about-mountains.jpg";
 import aboutMission from "@/assets/about-mission.jpg";
 import aboutHistory1965 from "@/assets/about-history-1965.jpg";
+import aboutHistory1990 from "@/assets/about-history-1990.jpg";
 import heroBus from "@/assets/hero-bus.jpg";
 import fleet26 from "@/assets/fleet-bus-26.jpg";
 import fleet35 from "@/assets/fleet-bus-35.jpg";
@@ -19,6 +20,12 @@ const TIMELINE = [
     title: "Η αρχή του ταξιδιού",
     desc: "Το όνειρο γίνεται πραγματικότητα! Ιδρύεται το γραφείο μας με αγάπη για τον ταξιδιώτη και τη λεπτομέρεια.",
     img: aboutHistory1965,
+  },
+  {
+    year: "1990",
+    title: "Το πρώτο μας πούλμαν",
+    desc: "Το ιστορικό DAF των πρώτων χρόνων ταξιδεύει χιλιάδες επιβάτες σε όλη την Ελλάδα.",
+    img: aboutHistory1990,
   },
   {
     year: "2008",
